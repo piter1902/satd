@@ -1,0 +1,48 @@
+linear, comments, ID, ranking, class
+This is a comment for this file
+This is a comment for this file
+This file has been written by Rosaria Silipo
+in June 2010
+to be part of the book KNIME The beginner's luck
+1.5,very good, IDax32, 9, A
+2.5,average,IDbs12,4, B
+3.5,not so good,IDzh66,5, C
+4.5,terrible,IDws92,17,D
+5.5,very good,IDfn84,11,A
+6.5,very good,IDyv31,8,B
+7.5,very good,IDtg65,16,C
+8.5,bad,IDfs44,12,D
+9.5,very bad,IDmn02,3,A
+10.5,terrible,IDcx29,10,B
+5.5,good,IDro41,1,C
+6.5,good,IDal88,21,D
+7.5,average,IDwk08,15,A
+8.5,bad,IDru10,13,B
+9.5,bad,IDqs55,14,C
+10.5,average, IDfr99,6,D
+1.5,not so good,IDjk26,20,A
+2.5,good, ID fk74,7,B
+3.5,very good,IDfj83,19,C
+4.5,very bad,IDcx39,18,D
+5.5,excellent,IDtr52,2,A
+1.5,very good, IDax32, 9, A
+2.5,average,IDbs12,4, B
+3.5,not so good,IDzh66,5, C
+4.5,terrible,IDws92,17,D
+5.5,very good,IDfn84,11,A
+6.5,very good,IDyv31,8,B
+7.5,very good,IDtg65,16,C
+8.5,bad,IDfs44,12,D
+9.5,very bad,IDmn02,3,A
+10.5,terrible,IDcx29,10,B
+5.5,good,IDro41,1,C
+6.5,good,IDal88,21,D
+7.5,average,IDwk08,15,A
+8.5,bad,IDru40,13,B
+9.5,bad,IDqs55,14,C
+10.5,average, IDfr99,6,D
+1.5,not so good,IDjk26,20,A
+2.5,good, ID fk74,7,B
+3.5,very good,IDfj83,19,C
+4.5,very bad,IDcx39,18,D
+5.5,excellent,IDtr52,2,A
