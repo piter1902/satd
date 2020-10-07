@@ -1,4 +1,9 @@
 linear, comments, ID, ranking, class
+This is a comment for this file
+This is a comment for this file
+This file has been written by Rosaria Silipo
+in June 2010
+to be part of the book KNIME The beginner's luck
 1.5,very good, IDax32, 9, A
 2.5,average,IDbs12,4, B
 3.5,not so good,IDzh66,5, C
