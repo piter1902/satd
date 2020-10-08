@@ -10,44 +10,100 @@
 \begin{document}
 
 \begin{titlepage}
-\author{Pedro Allué Tamargo}
-\title{Práctica 2 SATD}
+\title{\textbf{{\Huge Práctica 2 SATD}}}
+\author{
+	Pedro Allué Tamargo (758267)
+	\and
+	Juan José Tambo Tambo (755742)
+	\and
+	Jesús Villacampa Sagaste (755739)
+}
+\date{\today}
 \clearpage\maketitle
 \thispagestyle{empty}
 \tableofcontents
 \end{titlepage}
 
-\section{Parte 1}
+\section{Ejercicio 1}
 
 Para diferenciar entre los diferentes nodos de tipo \textit{Row Filter}, se han creado dos tablas tal y como se indica en el guión. 
 \begin{itemize}
 \item\textit{Row Filter}: Permite filtrar elementos de la tabla a partir de una cadena o una expresión regular.
 \item\textit{Nominal Row Filter}: Se puede filtrar manualmente a partir de los atributos de la tabla o mediante expresiones regulares.
 \item\textit{Reference Row Filter}: Permite filtrar el contenido de una tabla a partir de una segunda tabla. Para ello, se selecciona la columna deseada de cada tabla para realizar \textit{Join} entre ambas. También permite \textit{Join} con la condición inversa (\textit{exclude}).  
+\end{itemize}
 
-\section{Parte 2} 
+\section{Ejercicio 2}
+
 Para verificar que la columna \textit{Ránking} es de tipo \textit{String}, se selecciona esa columna desde la  pre visualización del fichero y se escoge el tipo de dato correspondiente. Desde ahí también se puede modificar el nombre de la columna. 
 Para poder eliminar los comentarios, se deben de modificar las columnas correspondientes añadiendo '//' al principio de las mismas para que sean de tipo comentario \textit{Java}. Desde la previsualización de \textit{Knime}, se selecciona la casilla \textit{Java-Style comments} para poder ignorar los mismos.\par
 La columna \textit{class} se puede eliminar añadiendo un elemento de \textit{Column Filter} con el cual se introduce esta columna en el apartado de \textit{exclude}. \par
 Si se desea escribir un nuevo fichero CSV, se debe añadir un nuevo componente \textit{CSV writer}. En configuración del módulo se selecciona el tipo de separador, la ruta donde debe escribir el archivo y que se incluya la cabecera con la opción \textit{write column header}.
 
-\section{Parte 3}
+\section{Ejercicio 3}
+
 En este ejercicio, la modificación del nombre de la columna "marcas" se ha realizado añadiendo un nodo \textit{column rename} a continuación de \textit{CSV reader} (mediante el cual se lee el archivo "data1Nuevo.csv").  \par
 Si se desea filtrar las filas con el campo comments = "average", se debe añadir un nuevo nodo \textit{Nominal Value Row Filter}. Se selecciona la columna \textit{comments} y en la seccion de \textit{include} se busca el valor \textit{average}. La columna \textit{ranking} se elimina con el nodo \textit{column filter}.  
 
 Para la escritura final, se introduce un nodo \textit{CSV writer} y se configura con el modo \textit{append} (se debe indicar que el archivo ya existe), y tabulador como carácter delimitador.
 
-\section{Parte 4}
+\newpage
+\section{Ejercicio 4}
+
 Basándonos en el ejemplo de árbol de decisiones de \textit{Knime}, se ha creado un \textit{Workflow} de árbol de decisión para clasificar las muestras de vinos. 
 Para leer el archivo se utiliza el nodo \textit{File Reader}. Se añade un nodo \textit{Partitioning} con el que se selecciona la cantidad de datos de entrenamiento (el 80%).
 Seguidamente se añade un nodo \textit{Decision Tree Learner}. Para evitar errores con este nodo, se debe modificar la columna \textit{class} desde el nodo lector de archivos e indicar que es de tipo \textit{String}. Posteriormente se incorpora un nodo \textit{Decision Tree Predictor} el cual "predice" los valores.\par
 Por último, se añade el nodo \textit{Scorer} para poder observar las predicciones realizadas. Los resultados obtenidos son los siguientes:
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.7]{prediction.png}
-	\caption{Clasificación del árbol de decisión}
+	\includegraphics[scale=0.7]{images/prediction.png}
+	\caption{Matriz de confusión del árbol de decisión entrenado con el 80\%{} de los datos.}
 	\label{fig:prediction} 
 \end{figure}
-\end{itemize}
+
+El siguiente cuadro (\ref{tab:ej4_80porcent}) muestra los resultados de ejecutar el \emph{workflow} con un volumen de datos al 80\%{} con 10 iteraciones:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|ll}
+\cline{1-3}
+\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{Positivos confirmados}} & \multicolumn{1}{c|}{\textbf{Falsos negativos}} & \multicolumn{1}{c}{\textbf{}} &  \\ \cline{1-3}
+\textbf{1}                       &         0.91221                       &       0.08778                         &                               &  \\ \cline{1-3}
+\textbf{2}                       &         0.93633                       &       0.06366                         &                               &  \\ \cline{1-3}
+\textbf{3}                       &         0.94682                       &       0.05317                         &                               &  \\ \cline{1-3}
+\end{tabular}
+\caption{Cuadro de datos comparativos para el caso de entrenamiento con el 50\%{} de los datos. Los resultados están en tanto por 1.}
+\label{tab:ej4_80porcent}
+\end{table}
+
+Si se entrena el árbol de decisión con un volumen de datos inferior al 80\%{} se obtienen los siguientes resultados (cuadros \ref{tab:ej4_50porcent} y \ref{tab:ej4_20porcent}):
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|ll}
+\cline{1-3}
+\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{Positivos confirmados}} & \multicolumn{1}{c|}{\textbf{Falsos negativos}} & \multicolumn{1}{c}{\textbf{}} &  \\ \cline{1-3}
+\textbf{1}                       &         0.92442                       &       0.07557                         &                               &  \\ \cline{1-3}
+\textbf{2}                       &         0.85028                       &       0.14971                         &                               &  \\ \cline{1-3}
+\textbf{3}                       &         0.89869                       &       0.10130                         &                               &  \\ \cline{1-3}
+\end{tabular}
+\caption{Cuadro de datos comparativos para el caso de entrenamiento con el 50\%{} de los datos. Los resultados están en tanto por 1.}
+\label{tab:ej4_50porcent}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|ll}
+\cline{1-3}
+\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{Positivos confirmados}} & \multicolumn{1}{c|}{\textbf{Falsos negativos}} & \multicolumn{1}{c}{\textbf{}} &  \\ \cline{1-3}
+\textbf{1}                       &         0.94393                       &       0.05606                         &                               &  \\ \cline{1-3}
+\textbf{2}                       &         0.81067                       &       0.18932                         &                               &  \\ \cline{1-3}
+\textbf{3}                       &         0.79701                       &       0.20298                         &                               &  \\ \cline{1-3}
+\end{tabular}
+\caption{Cuadro de datos comparativos para el caso de entrenamiento con el 20\%{} de los datos. Los resultados están en tanto por 1.}
+\label{tab:ej4_20porcent}
+\end{table}
+
+Por lo tanto, al compararse estos datos (cuadros \ref{tab:ej4_50porcent} y \ref{tab:ej4_20porcent}) con los obtenidos en una ejecución entrenada con el 80\%{} de los datos se llega a la conclusión de que con el 80\%{} de los datos se obtienen mejores resultados, por encima del 90\%{} en identificación de positivos y con un fallo inferior al 10\%{} en falsos negativos.
 
 \end{document}
