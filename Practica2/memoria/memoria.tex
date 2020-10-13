@@ -106,4 +106,84 @@ Si se entrena el árbol de decisión con un volumen de datos inferior al 80\%{} 
 
 Por lo tanto, al compararse estos datos (cuadros \ref{tab:ej4_50porcent} y \ref{tab:ej4_20porcent}) con los obtenidos en una ejecución entrenada con el 80\%{} de los datos se llega a la conclusión de que con el 80\%{} de los datos se obtienen mejores resultados, por encima del 90\%{} en identificación de positivos y con un fallo inferior al 10\%{} en falsos negativos.
 
+\newpage
+\section{Ejercicio 5}
+Como se pide en el enunciado, a partir del ejercicio 4, se modifica para esta vez entrenar la muestra con un perceptrón multicapa. Por tanto, se cambia el nodo \emph{Decision Tree Learner} por \emph{RProp MLP Learner}, así como el nodo \emph{Decision Tree Predictor} por \emph{MultiLayerPerceptron Predictor}. Además, se añade un nodo \emph{Normalizer} antes de hacer el particionado de los datos. 
+Los resultados han sido los siguientes:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|ll}
+\cline{1-3}
+\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{Positivos confirmados}} & \multicolumn{1}{c|}{\textbf{Falsos negativos}} & \multicolumn{1}{c}{\textbf{}} &  \\ \cline{1-3}
+\textbf{1}                       &         1                       &       0                         &                               &  \\ \cline{1-3}
+\textbf{2}                       &         0,94432 
+&       0,05567 
+&                               &  \\ \cline{1-3}
+\textbf{3}                       &         0,96087                       &       0,03912                         &                               &  \\ \cline{1-3}
+\end{tabular}
+\caption{Cuadro de datos comparativos para el caso de entrenamiento con el 80\%{} de los datos (10 ejecuciones) con un perceptrón multicapa. Los resultados están en tanto por 1.}
+\label{tab:ej5_80porcent}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|ll}
+\cline{1-3}
+\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{Positivos confirmados}} & \multicolumn{1}{c|}{\textbf{Falsos negativos}} & \multicolumn{1}{c}{\textbf{}} &  \\ \cline{1-3}
+\textbf{1}                       &         0,98833                       &       0,01166                         &                               &  \\ \cline{1-3}
+\textbf{2}                       &         0,92275 
+&       0,07724 
+&                               &  \\ \cline{1-3}
+\textbf{3}                       &         0,99019                       &       0,00980                         &                               &  \\ \cline{1-3}
+\end{tabular}
+\caption{Cuadro de datos comparativos para el caso de entrenamiento con el 50\%{} de los datos (10 ejecuciones) con un perceptrón multicapa. Los resultados están en tanto por 1.}
+\label{tab:ej5_50porcent}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|ll}
+\cline{1-3}
+\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{Positivos confirmados}} & \multicolumn{1}{c|}{\textbf{Falsos negativos}} & \multicolumn{1}{c}{\textbf{}} &  \\ \cline{1-3}
+\textbf{1}                       &         0,95236                       &       0,04763                         &                               &  \\ \cline{1-3}
+\textbf{2}                       &         0,88767 
+&       0,11232 
+&                               &  \\ \cline{1-3}
+\textbf{3}                       &         0,95010                       &       0,04989 &                               &  \\ \cline{1-3}
+\end{tabular}
+\caption{Cuadro de datos comparativos para el caso de entrenamiento con el 50\%{} de los datos (10 ejecuciones) con un perceptrón multicapa. Los resultados están en tanto por 1.}
+\label{tab:ej5_20porcent}
+\end{table}
+
+Por lo tanto, al compararse estos datos se llega a la conclusión de que con el 80\%{} de los datos se obtienen mejores resultados, por encima del 94\%{} en identificación de positivos y con un fallo inferior al 6\%{} en falsos negativos.
+
+Con el fin de obtener un rendimiento superior, se parte de la base del entrenamiento con el 80\% de los datos, ya que ha sido el que mejor rendimiento ha dado y se modifican diversos parámetros. Los parámetros que se pueden modificar son el número de iteraciones, el número de capas ocultas y el número de neuronas por capa. En el entrenamiento inicial los valores eran los siguientes: \\
+Número de iteraciones: 100 \\
+Capas ocultas: 1  \\
+Neuronas por capa: 10\\ 
+
+Se han realizado diversas pruebas para ajustar estos parámetros y obtener el mejor resultado.\\
+Número de iteraciones: 1000 \\
+Capas ocultas: 3  \\
+Neuronas por capa: 10 \\ 
+
+Con estos valores los resultados han mejorado considerablemente
+\textbf{TAMBO METE LOS CALCULOS}\\
+Número de iteraciones: 5000 \\
+Capas ocultas: 5  \\
+Neuronas por capa: 10 \\ 
+
+Con estos valores los resultados han mejorado con respecto al inicial pero han empeorado con respecto a los anteriores valores.
+\textbf{TAMBO METE LOS CALCULOS}\\
+Número de iteraciones: 1000 \\
+Capas ocultas: 3  \\
+Neuronas por capa: 100 \\ 
+
+Con estos valores se han obtenido los mejores resultados, obteniendo casi una efectividad del 100%.
+\textbf{TAMBO METE LOS CALCULOS}
+
+
+\textbf{TAMBO COMPARA UN POQUITO CON EL TREE LEARNER Y GG (Y BORRA ESTOS COMENTARIOS(SON 4 EN TOTAL, NO TE DEJES NINGUNO)). VAYA CULO GUARRA}
+
 \end{document}
