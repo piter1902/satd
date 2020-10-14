@@ -152,38 +152,97 @@ Los resultados han sido los siguientes:
 &                               &  \\ \cline{1-3}
 \textbf{3}                       &         0,95010                       &       0,04989 &                               &  \\ \cline{1-3}
 \end{tabular}
-\caption{Cuadro de datos comparativos para el caso de entrenamiento con el 50\%{} de los datos (10 ejecuciones) con un perceptrón multicapa. Los resultados están en tanto por 1.}
+\caption{Cuadro de datos comparativos para el caso de entrenamiento con el 20\%{} de los datos (10 ejecuciones) con un perceptrón multicapa. Los resultados están en tanto por 1.}
 \label{tab:ej5_20porcent}
 \end{table}
 
 Por lo tanto, al compararse estos datos se llega a la conclusión de que con el 80\%{} de los datos se obtienen mejores resultados, por encima del 94\%{} en identificación de positivos y con un fallo inferior al 6\%{} en falsos negativos.
 
 Con el fin de obtener un rendimiento superior, se parte de la base del entrenamiento con el 80\% de los datos, ya que ha sido el que mejor rendimiento ha dado y se modifican diversos parámetros. Los parámetros que se pueden modificar son el número de iteraciones, el número de capas ocultas y el número de neuronas por capa. En el entrenamiento inicial los valores eran los siguientes: \\
-Número de iteraciones: 100 \\
-Capas ocultas: 1  \\
-Neuronas por capa: 10\\ 
+\begin{itemize}
+	\item Número de iteraciones: 100
+	\item Capas ocultas: 1  
+	\item Neuronas por capa: 10
+	
+\end{itemize}
 
 Se han realizado diversas pruebas para ajustar estos parámetros y obtener el mejor resultado.\\
-Número de iteraciones: 1000 \\
-Capas ocultas: 3  \\
-Neuronas por capa: 10 \\ 
+\par
+\begin{itemize}
+	\item Número de iteraciones: 1000
+	\item Capas ocultas: 3  
+	\item Neuronas por capa: 10
+\end{itemize}
 
-Con estos valores los resultados han mejorado considerablemente
-\textbf{TAMBO METE LOS CALCULOS}\\
-Número de iteraciones: 5000 \\
-Capas ocultas: 5  \\
-Neuronas por capa: 10 \\ 
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|l|l|l|ll}
+		\cline{1-3}
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{Positivos confirmados}} & \multicolumn{1}{c|}{\textbf{Falsos negativos}} & \multicolumn{1}{c}{\textbf{}} &  \\ \cline{1-3}
+		\textbf{1}                       &         0,9772                       &       0,0227                         &                               &  \\ \cline{1-3}
+		\textbf{2}                       &         0,9565
+		&       0,0435 
+		&                               &  \\ \cline{1-3}
+		\textbf{3}                       &         1                       &      0 &                               &  \\ \cline{1-3}
+	\end{tabular}
+	\caption{Cuadro de datos comparativos para el caso de entrenamiento con el 80\%{} de los datos (1000 ejecuciones) con un perceptrón multicapa con tres capas ocultas. Los resultados están en tanto por 1.}
+	\label{tab:ej5_20porcent_3hidden_1000}
+\end{table}
+
+Con estos valores los resultados han mejorado considerablemente, como se observa en el siguiente cuadro.\\
+
+\newpage
+\begin{itemize}
+	\item Número de iteraciones: 5000
+	\item Capas ocultas: 5 
+	\item Neuronas por capa: 10
+\end{itemize}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|l|l|l|ll}
+		\cline{1-3}
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{Positivos confirmados}} & \multicolumn{1}{c|}{\textbf{Falsos negativos}} & \multicolumn{1}{c}{\textbf{}} &  \\ \cline{1-3}
+		\textbf{1}                       &        0,963636364
+		                      &       0,036363636
+		                                             &                               &  \\ \cline{1-3}
+		\textbf{2}                       &         0,953947368
+		&       0,046052632 
+		&                               &  \\ \cline{1-3}
+		\textbf{3}                       &         0,96
+		                       &      0,04
+		                        &                               &  \\ \cline{1-3}
+	\end{tabular}
+	\caption{Cuadro de datos comparativos para el caso de entrenamiento con el 80\%{} de los datos (5000 ejecuciones) con un perceptrón multicapa con 5 capas ocultas y 10 neuronas por capa. Los resultados están en tanto por 1.}
+	\label{tab:ej5_20porcent_5hidden_5000}
+\end{table}
 
 Con estos valores los resultados han mejorado con respecto al inicial pero han empeorado con respecto a los anteriores valores.
-\textbf{TAMBO METE LOS CALCULOS}\\
-Número de iteraciones: 1000 \\
-Capas ocultas: 3  \\
-Neuronas por capa: 100 \\ 
+\\
 
-Con estos valores se han obtenido los mejores resultados, obteniendo casi una efectividad del 100%.
-\textbf{TAMBO METE LOS CALCULOS}
+\begin{itemize}
+	\item Número de iteraciones: 1000
+	\item Capas ocultas: 3  
+	\item Neuronas por capa: 100
+	
+\end{itemize}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|l|l|l|ll}
+		\cline{1-3}
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{Positivos confirmados}} & \multicolumn{1}{c|}{\textbf{Falsos negativos}} & \multicolumn{1}{c}{\textbf{}} &  \\ \cline{1-3}
+		\textbf{1}                       &        1                      &       0                         &                               &  \\ \cline{1-3}
+		\textbf{2}                       &         0,975
+		&       0,025 
+		&                               &  \\ \cline{1-3}
+		\textbf{3}                       &         1                       &      0 &                               &  \\ \cline{1-3}
+	\end{tabular}
+	\caption{Cuadro de datos comparativos para el caso de entrenamiento con el 80\%{} de los datos (1000 ejecuciones) con un perceptrón multicapa con tres capas ocultas y 100 neuronas por capa. Los resultados están en tanto por 1.}
+	\label{tab:ej5_20porcent_3hidden_1000_100}
+\end{table}
 
+Con estos valores se han obtenido los mejores resultados, obteniendo casi una efectividad del 100\%, excepto para los elementos de la clase 2. Sin embargo, el modelo tarda más tiempo en entrenar.
+\\
 
-\textbf{TAMBO COMPARA UN POQUITO CON EL TREE LEARNER Y GG (Y BORRA ESTOS COMENTARIOS(SON 4 EN TOTAL, NO TE DEJES NINGUNO)). VAYA CULO GUARRA}
-
+En comparación con el método \textit{Tree Learner}, se puede considerar que el \textit{Perceptrón Multicapa} obtiene mejores resultados para cualquier porcentaje de datos entrenados, como se puede observar en los cuadros anteriores. El porcentaje de positivos confirmados supera el 90\% salvo en una ocasión, a diferencia de los resultados obtenidos con el \textit{Tree Learner}, los cuales rondan el 80 e incluso 70\% de aciertos en algunos casos.\par
+Para obtener mayor precisión en los resultados, el programa \textit{Knime} recomendaba el uso de un nodo \textit{Nomalizer} junto al nodo \textit{MLP Learner} para normalizar los datos de entrada mediante el método \textit{Z-Scorer Normalization}.
 \end{document}
