@@ -30,29 +30,28 @@ Para diferenciar entre los diferentes nodos de tipo \textit{Row Filter}, se han 
 \begin{itemize}
 \item\textit{Row Filter}: Permite filtrar elementos de la tabla a partir de una cadena o una expresión regular.
 \item\textit{Nominal Row Filter}: Se puede filtrar manualmente a partir de los atributos de la tabla o mediante expresiones regulares.
-\item\textit{Reference Row Filter}: Permite filtrar el contenido de una tabla a partir de una segunda tabla. Para ello, se selecciona la columna deseada de cada tabla para realizar \textit{Join} entre ambas. También permite \textit{Join} con la condición inversa (\textit{exclude}).  
+\item\textit{Reference Row Filter}: Permite filtrar el contenido de una tabla a partir de una segunda tabla. Para ello, se selecciona la columna deseada de cada tabla para realizar una operación \emph{``join''} entre ambas. También permite realizar un \emph{``join''} con la condición inversa (\textit{exclude}).  
 \end{itemize}
 
 \section{Ejercicio 2}
 
-Para verificar que la columna \textit{Ránking} es de tipo \textit{String}, se selecciona esa columna desde la  pre visualización del fichero y se escoge el tipo de dato correspondiente. Desde ahí también se puede modificar el nombre de la columna. 
-Para poder eliminar los comentarios, se deben de modificar las columnas correspondientes añadiendo '//' al principio de las mismas para que sean de tipo comentario \textit{Java}. Desde la previsualización de \textit{Knime}, se selecciona la casilla \textit{Java-Style comments} para poder ignorar los mismos.\par
-La columna \textit{class} se puede eliminar añadiendo un elemento de \textit{Column Filter} con el cual se introduce esta columna en el apartado de \textit{exclude}. \par
+Para verificar que la columna \textit{Ránking} es de tipo \textit{String}, se selecciona esa columna desde la  pre visualización del fichero y se escoge el tipo de dato correspondiente. Desde ahí también se puede modificar el nombre de la columna. \\
+Para poder eliminar los comentarios, se deben de modificar las columnas correspondientes añadiendo '//' al principio de las mismas para que sean de tipo comentario \textit{Java}. Desde la previsualización de \textit{Knime}, se selecciona la casilla \textit{Java-Style comments} para poder ignorar los mismos.\\
+La columna \textit{class} se puede eliminar añadiendo un elemento de \textit{Column Filter} con el cual se introduce esta columna en el apartado de \textit{exclude}.\\
 Si se desea escribir un nuevo fichero CSV, se debe añadir un nuevo componente \textit{CSV writer}. En configuración del módulo se selecciona el tipo de separador, la ruta donde debe escribir el archivo y que se incluya la cabecera con la opción \textit{write column header}.
 
 \section{Ejercicio 3}
 
-En este ejercicio, la modificación del nombre de la columna "marcas" se ha realizado añadiendo un nodo \textit{column rename} a continuación de \textit{CSV reader} (mediante el cual se lee el archivo "data1Nuevo.csv").  \par
-Si se desea filtrar las filas con el campo comments = "average", se debe añadir un nuevo nodo \textit{Nominal Value Row Filter}. Se selecciona la columna \textit{comments} y en la seccion de \textit{include} se busca el valor \textit{average}. La columna \textit{ranking} se elimina con el nodo \textit{column filter}.  
-
+En este ejercicio, la modificación del nombre de la columna "marcas" se ha realizado añadiendo un nodo \textit{column rename} a continuación de \textit{CSV reader} (mediante el cual se lee el archivo "data1Nuevo.csv"). \\
+Si se desea filtrar las filas con el campo comments = "average", se debe añadir un nuevo nodo \textit{Nominal Value Row Filter}. Se selecciona la columna \textit{comments} y en la seccion de \textit{include} se busca el valor \textit{average}. La columna \textit{ranking} se elimina con el nodo \textit{column filter}.\\
 Para la escritura final, se introduce un nodo \textit{CSV writer} y se configura con el modo \textit{append} (se debe indicar que el archivo ya existe), y tabulador como carácter delimitador.
 
 \newpage
 \section{Ejercicio 4}
 
 Basándonos en el ejemplo de árbol de decisiones de \textit{Knime}, se ha creado un \textit{Workflow} de árbol de decisión para clasificar las muestras de vinos. 
-Para leer el archivo se utiliza el nodo \textit{File Reader}. Se añade un nodo \textit{Partitioning} con el que se selecciona la cantidad de datos de entrenamiento (el 80%).
-Seguidamente se añade un nodo \textit{Decision Tree Learner}. Para evitar errores con este nodo, se debe modificar la columna \textit{class} desde el nodo lector de archivos e indicar que es de tipo \textit{String}. Posteriormente se incorpora un nodo \textit{Decision Tree Predictor} el cual "predice" los valores.\par
+Para leer el archivo se utiliza el nodo \textit{File Reader}. Se añade un nodo \textit{Partitioning} con el que se selecciona la cantidad de datos de entrenamiento (el 80\%{}).\\
+Seguidamente se añade un nodo \textit{Decision Tree Learner}. Para evitar errores con este nodo, se debe modificar la columna \textit{class} desde el nodo lector de archivos e indicar que es de tipo \textit{String}. Posteriormente se incorpora un nodo \textit{Decision Tree Predictor} el cual ``predice'' los valores.\\
 Por último, se añade el nodo \textit{Scorer} para poder observar las predicciones realizadas. Los resultados obtenidos son los siguientes:
 \begin{figure}[h!]
 	\centering
@@ -158,7 +157,7 @@ Los resultados han sido los siguientes:
 
 Por lo tanto, al compararse estos datos se llega a la conclusión de que con el 80\%{} de los datos se obtienen mejores resultados, por encima del 94\%{} en identificación de positivos y con un fallo inferior al 6\%{} en falsos negativos.
 
-Con el fin de obtener un rendimiento superior, se parte de la base del entrenamiento con el 80\% de los datos, ya que ha sido el que mejor rendimiento ha dado y se modifican diversos parámetros. Los parámetros que se pueden modificar son el número de iteraciones, el número de capas ocultas y el número de neuronas por capa. En el entrenamiento inicial los valores eran los siguientes: \\
+Con el fin de obtener un rendimiento superior, se parte de la base del entrenamiento con el 80\%{} de los datos, ya que ha sido el que mejor rendimiento ha dado y se modifican diversos parámetros. Los parámetros que se pueden modificar son el número de iteraciones, el número de capas ocultas y el número de neuronas por capa. En el entrenamiento inicial los valores eran los siguientes: \\
 \begin{itemize}
 	\item Número de iteraciones: 100
 	\item Capas ocultas: 1  
@@ -243,6 +242,7 @@ Con estos valores los resultados han mejorado con respecto al inicial pero han e
 Con estos valores se han obtenido los mejores resultados, obteniendo casi una efectividad del 100\%, excepto para los elementos de la clase 2. Sin embargo, el modelo tarda más tiempo en entrenar.
 \\
 
-En comparación con el método \textit{Tree Learner}, se puede considerar que el \textit{Perceptrón Multicapa} obtiene mejores resultados para cualquier porcentaje de datos entrenados, como se puede observar en los cuadros anteriores. El porcentaje de positivos confirmados supera el 90\% salvo en una ocasión, a diferencia de los resultados obtenidos con el \textit{Tree Learner}, los cuales rondan el 80 e incluso 70\% de aciertos en algunos casos.\par
+En comparación con el método \textit{Tree Learner}, se puede considerar que el \textit{Perceptrón Multicapa} obtiene mejores resultados para cualquier porcentaje de datos entrenados, como se puede observar en los cuadros anteriores. El porcentaje de positivos confirmados supera el 90\%{} salvo en una ocasión, a diferencia de los resultados obtenidos con el \textit{Tree Learner}, los cuales rondan el 80 e incluso 70\%{} de aciertos en algunos casos.\\
 Para obtener mayor precisión en los resultados, el programa \textit{Knime} recomendaba el uso de un nodo \textit{Nomalizer} junto al nodo \textit{MLP Learner} para normalizar los datos de entrada mediante el método \textit{Z-Scorer Normalization}.
+
 \end{document}
