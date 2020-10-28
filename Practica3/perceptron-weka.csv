@@ -1,0 +1,4 @@
+"row ID";"TruePositives";"FalsePositives";"TrueNegatives";"FalseNegatives";"NUM_ELEMENTOS";"TruePositives_porcentaje";"FalseNegatives_porcentaje"
+"1";11;1;24;0;11;1;0
+"2";17;0;17;2;19;0.8947368421052632;0.10526315789473684
+"3";6;1;29;0;6;1;0
