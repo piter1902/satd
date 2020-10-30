@@ -1,0 +1,49 @@
+Resultados 80:;;;;;;;
+row ID;TruePositives;FalsePositives;TrueNegatives;FalseNegatives;NUM_ELEMENTOS;TruePositives_porcentaje;FalseNegatives_porcentaje
+Iris-setosa;7;0;23;0;7;1;0
+Iris-versicolor;11;0;18;1;12;0,916666667;0,083333333
+Iris-virginica;11;1;18;0;11;1;0
+Iris-setosa;13;0;17;0;13;1;0
+Iris-versicolor;10;0;20;0;10;1;0
+Iris-virginica;7;0;23;0;7;1;0
+Iris-setosa;13;0;17;0;13;1;0
+Iris-versicolor;10;0;20;0;10;1;0
+Iris-virginica;7;0;23;0;7;1;0
+Iris-setosa;8;0;22;0;8;1;0
+Iris-versicolor;10;0;19;1;11;0,909090909;0,090909091
+Iris-virginica;11;1;18;0;11;1;0
+Iris-setosa;7;0;23;0;7;1;0
+Iris-versicolor;10;1;18;1;11;0,909090909;0,090909091
+Iris-virginica;11;1;17;1;12;0,916666667;0,083333333
+Resultados 50:;;;;;;;
+Iris-setosa;24;0;51;0;24;1;0
+Iris-versicolor;29;0;44;2;31;0,935483871;0,064516129
+Iris-virginica;20;2;53;0;20;1;0
+Iris-setosa;25;0;50;0;25;1;0
+Iris-versicolor;26;5;43;1;27;0,962962963;0,037037037
+Iris-virginica;18;1;51;5;23;0,782608696;0,217391304
+Iris-setosa;28;0;47;0;28;1;0
+Iris-versicolor;16;2;56;1;17;0,941176471;0,058823529
+Iris-virginica;28;1;44;2;30;0,933333333;0,066666667
+Iris-setosa;24;0;51;0;24;1;0
+Iris-versicolor;23;8;44;0;23;1;0
+Iris-virginica;20;0;47;8;28;0,714285714;0,285714286
+Iris-setosa;27;0;48;0;27;1;0
+Iris-versicolor;23;0;50;2;25;0,92;0,08
+Iris-virginica;23;2;50;0;23;1;0
+Resultados 20:;;;;;;;
+Iris-setosa;38;0;82;0;38;1;0
+Iris-versicolor;38;4;76;2;40;0,95;0,05
+Iris-virginica;38;2;76;4;42;0,904761905;0,095238095
+Iris-setosa;40;0;80;0;40;1;0
+Iris-versicolor;38;3;74;5;43;0,88372093;0,11627907
+Iris-virginica;34;5;78;3;37;0,918918919;0,081081081
+Iris-setosa;40;0;80;0;40;1;0
+Iris-versicolor;39;5;75;1;40;0,975;0,025
+Iris-virginica;35;1;79;5;40;0,875;0,125
+Iris-setosa;43;0;77;0;43;1;0
+Iris-versicolor;34;4;81;1;35;0,971428571;0,028571429
+Iris-virginica;38;1;77;4;42;0,904761905;0,095238095
+Iris-setosa;39;0;81;0;39;1;0
+Iris-versicolor;34;3;79;4;38;0,894736842;0,105263158
+Iris-virginica;40;4;73;3;43;0,930232558;0,069767442

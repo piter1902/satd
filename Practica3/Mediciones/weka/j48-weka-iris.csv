@@ -1,0 +1,49 @@
+Resultados 80:;;;;;;;;;;;;
+row ID;TruePositives;FalsePositives;TrueNegatives;FalseNegatives;NUM_ELEMENTOS;TruePositives_porcentaje;FalseNegatives_porcentaje;;;;;
+Iris-setosa;11;0;19;0;11;1;0;;;;Cálculos 80;
+Iris-versicolor;8;1;20;1;9;0,888888889;0,111111111;;;;TP;FN
+Iris-virginica;9;1;19;1;10;0,9;0,1;;;Iris-Setosa;1;0
+Iris-setosa;10;0;20;0;10;1;0;;;Iris-versicolor;0,902777778;0,097222222
+Iris-versicolor;7;1;22;0;7;1;0;;;Iris-virginica;0,91006993;0,08993007
+Iris-virginica;12;0;17;1;13;0,923076923;0,076923077;;;;;
+Iris-setosa;8;0;22;0;8;1;0;;;;;
+Iris-versicolor;11;1;18;0;11;1;0;;;;Cálculos 50;
+Iris-virginica;10;0;19;1;11;0,909090909;0,090909091;;;;TP;FN
+Iris-setosa;11;0;19;0;11;1;0;;;Iris-Setosa;0,967948718;0,032051282
+Iris-versicolor;8;2;20;0;8;1;0;;;Iris-versicolor;0,909089592;0,090910408
+Iris-virginica;9;0;19;2;11;0,818181818;0,181818182;;;Iris-virginica;0,885428736;0,114571264
+Iris-setosa;16;0;14;0;16;1;0;;;;;
+Iris-versicolor;5;0;22;3;8;0,625;0,375;;;;;
+Iris-virginica;6;3;21;0;6;1;0;;;;Cálculos 20;
+Resultados 50:;;;;;;;;;;;TP;FN
+Iris-setosa;23;0;52;0;23;1;0;;;Iris-Setosa;0,921707646;0,078292354
+Iris-versicolor;27;4;42;2;29;0,931034483;0,068965517;;;Iris-versicolor;0,910532936;0,089467064
+Iris-virginica;19;2;50;4;23;0,826086957;0,173913043;;;Iris-virginica;0,942189912;0,057810088
+Iris-setosa;22;0;51;2;24;0,916666667;0,083333333;;;;;
+Iris-versicolor;24;5;44;2;26;0,923076923;0,076923077;;;;;
+Iris-virginica;22;2;48;3;25;0,88;0,12;;;;;
+Iris-setosa;26;0;49;0;26;1;0;;;;;
+Iris-versicolor;22;2;50;1;23;0,956521739;0,043478261;;;;;
+Iris-virginica;24;1;48;2;26;0,923076923;0,076923077;;;;;
+Iris-setosa;23;0;52;0;23;1;0;;;;;
+Iris-versicolor;23;3;47;2;25;0,92;0,08;;;;;
+Iris-virginica;24;2;46;3;27;0,888888889;0,111111111;;;;;
+Iris-setosa;24;0;49;2;26;0,923076923;0,076923077;;;;;
+Iris-versicolor;22;4;44;5;27;0,814814815;0,185185185;;;;;
+Iris-virginica;20;5;48;2;22;0,909090909;0,090909091;;;;;
+Resultados 20:;;;;;;;;;;;;
+Iris-setosa;36;0;82;2;38;0,947368421;0,052631579;;;;;
+Iris-versicolor;41;5;73;1;42;0,976190476;0,023809524;;;;;
+Iris-virginica;37;1;79;3;40;0,925;0,075;;;;;
+Iris-setosa;37;0;81;2;39;0,948717949;0,051282051;;;;;
+Iris-versicolor;35;3;77;5;40;0,875;0,125;;;;;
+Iris-virginica;40;5;74;1;41;0,975609756;0,024390244;;;;;
+Iris-setosa;40;0;79;1;41;0,975609756;0,024390244;;;;;
+Iris-versicolor;31;2;81;6;37;0,837837838;0,162162162;;;;;
+Iris-virginica;41;6;72;1;42;0,976190476;0,023809524;;;;;
+Iris-setosa;37;0;82;1;38;0,973684211;0,026315789;;;;;
+Iris-versicolor;38;2;74;6;44;0,863636364;0,136363636;;;;;
+Iris-virginica;37;6;76;1;38;0,973684211;0,026315789;;;;;
+Iris-setosa;29;0;82;9;38;0,763157895;0,236842105;;;;;
+Iris-versicolor;39;15;66;0;39;1;0;;;;;
+Iris-virginica;37;0;77;6;43;0,860465116;0,139534884;;;;;

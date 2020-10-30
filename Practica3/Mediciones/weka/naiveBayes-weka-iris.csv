@@ -1,0 +1,49 @@
+Resultados 80:;;;;;;;;;;;;
+row ID;TruePositives;FalsePositives;TrueNegatives;FalseNegatives;NUM_ELEMENTOS;TruePositives_porcentaje;FalseNegatives_porcentaje;;;;;
+Iris-setosa;11;0;19;0;11;1;0;;;;Cálculos 80;
+Iris-versicolor;8;1;20;1;9;0,888888889;0,111111111;;;;TP;FN
+Iris-virginica;9;1;19;1;10;0,9;0,1;;;Iris-Setosa;1;0
+Iris-setosa;10;0;20;0;10;1;0;;;Iris-versicolor;0,927777778;0,072222222
+Iris-versicolor;7;2;21;0;7;1;0;;;Iris-virginica;0,912867133;0,087132867
+Iris-virginica;11;0;17;2;13;0,846153846;0,153846154;;;;;
+Iris-setosa;8;0;22;0;8;1;0;;;;;
+Iris-versicolor;11;1;18;0;11;1;0;;;;Cálculos 50;
+Iris-virginica;10;0;19;1;11;0,909090909;0,090909091;;;;TP;FN
+Iris-setosa;11;0;19;0;11;1;0;;;Iris-Setosa;1;0
+Iris-versicolor;8;1;21;0;8;1;0;;;Iris-versicolor;0,894500733;0,105499267
+Iris-virginica;10;0;19;1;11;0,909090909;0,090909091;;;Iris-virginica;0,912306206;0,087693794
+Iris-setosa;16;0;14;0;16;1;0;;;;;
+Iris-versicolor;6;0;22;2;8;0,75;0,25;;;;;
+Iris-virginica;6;2;22;0;6;1;0;;;;Cálculos 20;
+Resultados 50:;;;;;;;;;;;TP;FN
+Iris-setosa;23;0;52;0;23;1;0;;;Iris-Setosa;1;0
+Iris-versicolor;26;3;43;3;29;0,896551724;0,103448276;;;Iris-versicolor;0,814444834;0,185555166
+Iris-virginica;20;3;49;3;23;0,869565217;0,130434783;;;Iris-virginica;0,93245307;0,06754693
+Iris-setosa;24;0;51;0;24;1;0;;;;;
+Iris-versicolor;23;3;46;3;26;0,884615385;0,115384615;;;;;
+Iris-virginica;22;3;47;3;25;0,88;0,12;;;;;
+Iris-setosa;26;0;49;0;26;1;0;;;;;
+Iris-versicolor;22;2;50;1;23;0,956521739;0,043478261;;;;;
+Iris-virginica;24;1;48;2;26;0,923076923;0,076923077;;;;;
+Iris-setosa;23;0;52;0;23;1;0;;;;;
+Iris-versicolor;23;3;47;2;25;0,92;0,08;;;;;
+Iris-virginica;24;2;46;3;27;0,888888889;0,111111111;;;;;
+Iris-setosa;26;0;49;0;26;1;0;;;;;
+Iris-versicolor;22;0;48;5;27;0,814814815;0,185185185;;;;;
+Iris-virginica;22;5;48;0;22;1;0;;;;;
+Resultados 20:;;;;;;;;;;;;
+Iris-setosa;38;0;82;0;38;1;0;;;;;
+Iris-versicolor;32;6;72;10;42;0,761904762;0,238095238;;;;;
+Iris-virginica;34;10;70;6;40;0,85;0,15;;;;;
+Iris-setosa;39;0;81;0;39;1;0;;;;;
+Iris-versicolor;36;1;79;4;40;0,9;0,1;;;;;
+Iris-virginica;40;4;75;1;41;0,975609756;0,024390244;;;;;
+Iris-setosa;41;0;79;0;41;1;0;;;;;
+Iris-versicolor;32;1;82;5;37;0,864864865;0,135135135;;;;;
+Iris-virginica;41;5;73;1;42;0,976190476;0,023809524;;;;;
+Iris-setosa;38;0;82;0;38;1;0;;;;;
+Iris-versicolor;24;0;76;20;44;0,545454545;0,454545455;;;;;
+Iris-virginica;38;20;62;0;38;1;0;;;;;
+Iris-setosa;38;0;82;0;38;1;0;;;;;
+Iris-versicolor;39;6;75;0;39;1;0;;;;;
+Iris-virginica;37;0;77;6;43;0,860465116;0,139534884;;;;;
