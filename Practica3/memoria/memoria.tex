@@ -1,0 +1,99 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+
+\lstset { frame = single }
+
+\begin{document}
+
+\begin{titlepage}
+\title{\textbf{
+	{\Huge Práctica 3: Integración de \emph{KNIME} y \emph{WEKA}}\\
+	{\Large Sistemas de Ayuda a la Toma de Decisiones}
+}}
+\author{
+	Pedro Allué Tamargo (758267)
+	\and
+	Juan José Tambo Tambo (755742)
+	\and
+	Jesús Villacampa Sagaste (755739)
+}
+\date{\today}
+\clearpage\maketitle
+\thispagestyle{empty}
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+\section{Ejercicio 1}
+
+Se ha creado el \emph{workflow} ilustrado en la Figura \textbf{numFigura} para trabajar con los datos del conjunto de datos \emph{yellow-small.data}.\\
+Se ha utilizado un nodo \emph{Rule Engine} para crear una nueva columna \emph{``class''}. El contenido de este nodo son las siguientes reglas:
+
+\begin{lstlisting}
+$Color$ MATCHES "YELLOW" AND $Size$ MATCHES "SMALL" => "inflated"
+TRUE => "not inflated"
+\end{lstlisting}
+
+Tras este nodo se ha utilizado un nodo \emph{String manipulation} para concatenar los valores de las columnas \emph{class} e \emph{inflated (true/false)} utilizando la expresión:
+
+\begin{lstlisting}
+string($class$ + " is " + $Inflated (True/False)$)
+\end{lstlisting}
+
+{\Huge \textbf{Meter figura aqui}}
+
+\section{Ejercicio 2}
+
+Se va a proceder a analizar un conjunto de datos que describe el número de visitantes de un sitio web en los meses de junio/julio de 2010 (fichero \emph{website1.txt}).\\
+
+Para calcular los parámetros de media, desviación típica, Kurtosis se ha utilizado el \emph{workflow} mostrado en la Figura \textbf{numFigura}.\\
+La \emph{Kurtosis} es una medida estadística que muestra la forma de una distribución de probabilidad. Una \emph{Kurtosis} grande implica una mayor concentración de valores de la variables o muy cerca de la media de la distribución (pico) o muy lejos de ella (colas de la distribución), al mismo tiempo que existe una menor frecuencia de valores intermedios.\\
+\textbf{¿Cómo ilustramos esto en este conjunto de datos?}\\
+
+Para entrenar la red Bayesiana (Figura \textbf{numFigura}) se deben preparar los datos. Para ello se debe crear una nueva columna \emph{isWeekend} para ilustrar si es fin de semana o no. Utilizando el nodo \emph{Rule engine} se utilizarán las siguientes reglas:
+
+\begin{lstlisting}
+$weekday$ MATCHES "Sat" => "Yes"
+$weekday$ MATCHES "Sun" => "Yes"
+TRUE => "No"
+\end{lstlisting}
+
+Se ha utilizado un nodo \emph{Column filter} para eliminar la columna \emph{weekday} ya que la red Bayesiana presenta un mejor rendimiento si conoce este valor ya que si se entrena con esta variable reconoce la regla de creación de la columna \emph{isWeekend}.\\
+Para llegar a esta conclusión se han probado las distintas combinaciones de columnas utilizando el \emph{Column Filter}.\\
+\textbf{¿Explica más pruebas realizadas?}\\
+
+Para dibujar la curva \emph{ROC} se ha utilizado un nodo \emph{ROC Cuve (local)} a la salida del nodo \emph{Naive Bayes Predictor}. Se puede observar en la Figura \textbf{numFigura} que la forma de la gráfica... \textbf{(?)}.\\
+
+
+{\Huge \textbf{Meter figura aqui}}
+
+{\Huge \textbf{Meter gráfica aqui}}
+
+
+\section{Ejercicio 3}
+
+Para la evaluación de los distintos conjuntos de datos se han creado 2 \emph{workflows}. Uno de ellos (Figura \textbf{numFigura}) utiliza las herramientas de \emph{KNIME} para evaluar los datos. El otro (Figura \textbf{numFigura}) utiliza las herramientas de \emph{WEKA} para evaluar los datos.\\
+
+Para el conjunto de datos \emph{wine} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.\\
+Para el conjunto de datos \emph{iris} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.\\
+Para el conjunto de datos \emph{adult} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.\\
+
+{\Huge \textbf{Meter datos aqui}}\\
+
+En cuanto a los problemas que han surgido, con el \emph{dataset} \emph{adult} se necesitaba una columna \emph{class} y por lo tanto, se ha renombrado la última columna a \emph{``Class''}. También otro problema surgido con este \emph{dataset} se ha tenido que convertir la columna \emph{``Class''} de string a número (con el perceptrón multicapa) convirtiendo la cadena \emph{$<=$50K} a la \emph{clase 0} y la cadena \emph{$>$50K} a la \emph{clase 1}. Para ello se ha utilizado un nodo \emph{Column Filter} para eliminar todas las variables no numéricas y un nodo \emph{Category To Number} para convertir la cadena \emph{``Class''} en un entero.\\
+
+
+{\Huge \textbf{Meter figura workflow 1 aqui}}
+
+{\Huge \textbf{Meter figura workflow 2 aqui}}
+
+\end{document}
