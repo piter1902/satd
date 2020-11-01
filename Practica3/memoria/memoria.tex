@@ -85,15 +85,141 @@ Para la evaluación de los distintos conjuntos de datos se han creado 2 \emph{wo
 
 Para el conjunto de datos \emph{wine} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.\\
 Para el conjunto de datos \emph{iris} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.\\
-Para el conjunto de datos \emph{adult} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.\\
 
-{\Huge \textbf{Meter datos aqui}}\\
+Para el conjunto de datos \emph{adult} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.
+En el anexo se pueden observar las tablas comparativas de las distintas ejecuciones del \emph{workflow} tanto con \emph{KNIME} (K) como con \emph{WEKA} (W). Se puede apreciar que conforme se reduce el número de datos de entrenamiento se pierde precisión, identificando datos pertenecientes a la otra clase de datos ($>$50K) como datos de clase $<=$50K. El método que más ha errado en la identificación de las clases ha sido el perceptrón multicapa.\\
+El método que menos ha variado la precisión conforme se entrenaba con menos datos ha sido el \emph{J48} y en especial utilizando los nodos de \emph{WEKA} siempre ha mantenido el porcentaje de \emph{True Positives} por encima del 93\% en la clase $<=$50K y del 60\% en la clase $>$50K.\\
 
-En cuanto a los problemas que han surgido, con el \emph{dataset} \emph{adult} se necesitaba una columna \emph{class} y por lo tanto, se ha renombrado la última columna a \emph{``Class''}. También otro problema surgido con este \emph{dataset} se ha tenido que convertir la columna \emph{``Class''} de string a número (con el perceptrón multicapa) convirtiendo la cadena \emph{$<=$50K} a la \emph{clase 0} y la cadena \emph{$>$50K} a la \emph{clase 1}. Para ello se ha utilizado un nodo \emph{Column Filter} para eliminar todas las variables no numéricas y un nodo \emph{Category To Number} para convertir la cadena \emph{``Class''} en un entero.\\
+
+{\Huge \textbf{Meter datos en el Anexo 1}}\\
+
+En cuanto a los problemas que han surgido, con el \emph{dataset} \emph{adult} se necesitaba una columna \emph{Class} y por lo tanto, se ha renombrado la última columna a \emph{``Class''}. Para ello se ha utilizado un nodo \emph{Column Filter} para eliminar todas las variables no numéricas.\\
 
 
 {\Huge \textbf{Meter figura workflow 1 aqui}}
 
 {\Huge \textbf{Meter figura workflow 2 aqui}}
+
+\newpage
+\section{Anexo 1: Cuadros de datos ejercicio 3}
+
+\subsection{Dataset Adult}
+
+\subsubsection{Naive Bayes}
+\begin{table}[h]
+\begin{tabular}{lllll}
+\hline
+\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$<=$50K}} & \multicolumn{1}{l|}{0.942}          & \multicolumn{1}{l|}{0.058}          & \multicolumn{1}{l|}{0.936}          & \multicolumn{1}{l|}{0.064} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$>$50K}} & \multicolumn{1}{l|}{0.511}          & \multicolumn{1}{l|}{0.489}          & \multicolumn{1}{l|}{0.515}          & \multicolumn{1}{l|}{0.485} \\ \hline
+\textbf{}                       &                                &                                &                                &                      
+\end{tabular}
+\caption{Datos de entrenamiento del dataset \emph{Adult} con el 80\% usando \emph{Naive Bayes}}
+\label{tab:adult_bayes_80}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{lllll}
+\hline
+\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$<=$50K}} & \multicolumn{1}{l|}{0.941}          & \multicolumn{1}{l|}{0.059}          & \multicolumn{1}{l|}{0.933}          & \multicolumn{1}{l|}{0.067} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$>$50K}} & \multicolumn{1}{l|}{0.513}          & \multicolumn{1}{l|}{0.487}          & \multicolumn{1}{l|}{0.513}          & \multicolumn{1}{l|}{0.487} \\ \hline
+\textbf{}                       &                                &                                &                                &                      
+\end{tabular}
+\caption{Datos de entrenamiento del dataset \emph{Adult} con el 50\% usando \emph{Naive Bayes}}
+\label{tab:adult_bayes_50}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{lllll}
+\hline
+\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$<=$50K}} & \multicolumn{1}{l|}{0.939}          & \multicolumn{1}{l|}{0.061}          & \multicolumn{1}{l|}{0.934}          & \multicolumn{1}{l|}{0.066} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$>$50K}} & \multicolumn{1}{l|}{0.508}          & \multicolumn{1}{l|}{0.492}          & \multicolumn{1}{l|}{0.522}          & \multicolumn{1}{l|}{0.478} \\ \hline
+\textbf{}                       &                                &                                &                                &                      
+\end{tabular}
+\caption{Datos de entrenamiento del dataset \emph{Adult} con el 30\% usando \emph{Naive Bayes}}
+\label{tab:adult_bayes_30}
+\end{table}
+
+\newpage
+\subsubsection{J48}
+
+\begin{table}[h]
+\begin{tabular}{lllll}
+\hline
+\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$<=$50K}} & \multicolumn{1}{l|}{0.900}          & \multicolumn{1}{l|}{0.100}          & \multicolumn{1}{l|}{0.936}          & \multicolumn{1}{l|}{0.064} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$>$50K}} & \multicolumn{1}{l|}{0.603}          & \multicolumn{1}{l|}{0.397}          & \multicolumn{1}{l|}{0.621}          & \multicolumn{1}{l|}{0.379} \\ \hline
+\textbf{}                       &                                &                                &                                &                      
+\end{tabular}
+\caption{Datos de entrenamiento del dataset \emph{Adult} con el 80\% usando \emph{J48}}
+\label{tab:adult_j48_80}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{lllll}
+\hline
+\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$<=$50K}} & \multicolumn{1}{l|}{0.897}          & \multicolumn{1}{l|}{0.103}          & \multicolumn{1}{l|}{0.937}          & \multicolumn{1}{l|}{0.063} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$>$50K}} & \multicolumn{1}{l|}{0.598}          & \multicolumn{1}{l|}{0.402}          & \multicolumn{1}{l|}{0.607}          & \multicolumn{1}{l|}{0.392} \\ \hline
+\textbf{}                       &                                &                                &                                &                      
+\end{tabular}
+\caption{Datos de entrenamiento del dataset \emph{Adult} con el 50\% usando \emph{J48}}
+\label{tab:adult_j48_50}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{lllll}
+\hline
+\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$<=$50K}} & \multicolumn{1}{l|}{0.890}          & \multicolumn{1}{l|}{0.110}          & \multicolumn{1}{l|}{0.933}          & \multicolumn{1}{l|}{0.067} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$>$50K}} & \multicolumn{1}{l|}{0.599}          & \multicolumn{1}{l|}{0.401}          & \multicolumn{1}{l|}{0.600}          & \multicolumn{1}{l|}{0.400} \\ \hline
+\textbf{}                       &                                &                                &                                &                      
+\end{tabular}
+\caption{Datos de entrenamiento del dataset \emph{Adult} con el 30\% usando \emph{J48}}
+\label{tab:adult_j48_30}
+\end{table}
+
+\newpage
+\subsection{Perceptrón multicapa}
+\begin{table}[h]
+\begin{tabular}{lllll}
+\hline
+\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$<=$50K}} & \multicolumn{1}{l|}{0.901}          & \multicolumn{1}{l|}{0.099}          & \multicolumn{1}{l|}{0.927}          & \multicolumn{1}{l|}{0.073} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$>$50K}} & \multicolumn{1}{l|}{0.377}          & \multicolumn{1}{l|}{0.623}          & \multicolumn{1}{l|}{0.602}          & \multicolumn{1}{l|}{0.398} \\ \hline
+\textbf{}                       &                                &                                &                                &                      
+\end{tabular}
+\caption{Datos de entrenamiento del dataset \emph{Adult} con el 80\% usando \emph{Perceptrón multicapa}}
+\label{tab:adult_perceptron_80}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{lllll}
+\hline
+\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$<=$50K}} & \multicolumn{1}{l|}{1.000}          & \multicolumn{1}{l|}{0.000}          & \multicolumn{1}{l|}{0.930}          & \multicolumn{1}{l|}{0.070} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$>$50K}} & \multicolumn{1}{l|}{0.000}          & \multicolumn{1}{l|}{1.000}          & \multicolumn{1}{l|}{0.605}          & \multicolumn{1}{l|}{0.395} \\ \hline
+\textbf{}                       &                                &                                &                                &                      
+\end{tabular}
+\caption{Datos de entrenamiento del dataset \emph{Adult} con el 50\% usando \emph{Perceptrón multicapa}}
+\label{tab:adult_perceptron_50}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{lllll}
+\hline
+\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$<=$50K}} & \multicolumn{1}{l|}{0.890}          & \multicolumn{1}{l|}{0.110}          & \multicolumn{1}{l|}{0.932}          & \multicolumn{1}{l|}{0.068} \\ \hline
+\multicolumn{1}{|l|}{\textbf{$>$50K}} & \multicolumn{1}{l|}{0.389}          & \multicolumn{1}{l|}{0.611}          & \multicolumn{1}{l|}{0.587}          & \multicolumn{1}{l|}{0.413} \\ \hline
+\textbf{}                       &                                &                                &                                &                      
+\end{tabular}
+\caption{Datos de entrenamiento del dataset \emph{Adult} con el 30\% usando \emph{Perceptrón multicapa}}
+\label{tab:adult_perceptron_30}
+\end{table}
+
+
+
 
 \end{document}
