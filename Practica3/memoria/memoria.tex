@@ -90,16 +90,23 @@ Para el conjunto de datos \emph{adult} se han entrenado las distintas herramient
 En el anexo se pueden observar las tablas comparativas de las distintas ejecuciones del \emph{workflow} tanto con \emph{KNIME} (K) como con \emph{WEKA} (W). Se puede apreciar que conforme se reduce el número de datos de entrenamiento se pierde precisión, identificando datos pertenecientes a la otra clase de datos ($>$50K) como datos de clase $<=$50K. El método que más ha errado en la identificación de las clases ha sido el perceptrón multicapa.\\
 El método que menos ha variado la precisión conforme se entrenaba con menos datos ha sido el \emph{J48} y en especial utilizando los nodos de \emph{WEKA} siempre ha mantenido el porcentaje de \emph{True Positives} por encima del 93\% en la clase $<=$50K y del 60\% en la clase $>$50K.\\
 
-
-{\Huge \textbf{Meter datos en el Anexo 1}}\\
-
 En cuanto a los problemas que han surgido, con el \emph{dataset} \emph{adult} se necesitaba una columna \emph{Class} y por lo tanto, se ha renombrado la última columna a \emph{``Class''}. Para ello se ha utilizado un nodo \emph{Column Filter} para eliminar todas las variables no numéricas.\\
 
+Para simplificar y agilizar el entrenamiento y ejecución de cada uno de los clasificadores, se han creado dos \textit{workflows}, uno que agrupa todos los clasificadores que provee el propio \textit{Knime}\ref{fig:workflow_knime} y otro que agrupa los nodos que proporciona el \textit{plugin} de \textit{Weka}\ref{fig:workflow_weka}.
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{images/workflow_weka.png}
+	\caption{Workflow con modelos de entrenamiento de \textit{Weka}}
+	\label{fig:workflow_weka}
+\end{figure}
 
-{\Huge \textbf{Meter figura workflow 1 aqui}}
-
-{\Huge \textbf{Meter figura workflow 2 aqui}}
-
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{images/workflow_knime.png}
+	\caption{Workflow con modelos de entrenamiento de \textit{Knime}}
+	\label{fig:workflow_knime}
+\end{figure}
+De esta manera en cada \textit{Workflow} se indica el \textit{dataset} deseado con el nodo \textit{File Reader} y se selecciona el \% de datos a entrenar con el nodo \textit{partitioning}. Los resultados se escriben en archivos \textit{csv} ditintos, indicados con los nodos \textit{csv wirter}. Así se centralizan los distintos modelos de entrenamiento con una sola ejecución.
 \newpage
 \section{Anexo 1: Cuadros de datos ejercicio 3}
 
@@ -130,7 +137,7 @@ En cuanto a los problemas que han surgido, con el \emph{dataset} \emph{adult} se
 \label{tab:adult_bayes_50}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[h!]
 \begin{tabular}{lllll}
 \hline
 \multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
@@ -182,7 +189,7 @@ En cuanto a los problemas que han surgido, con el \emph{dataset} \emph{adult} se
 \end{table}
 
 \newpage
-\subsection{Perceptrón multicapa}
+\subsubsection{Perceptrón multicapa}
 \begin{table}[h]
 \begin{tabular}{lllll}
 \hline
@@ -220,6 +227,134 @@ En cuanto a los problemas que han surgido, con el \emph{dataset} \emph{adult} se
 \end{table}
 
 
+\subsection{Dataset Iris}
+\subsubsection{Naive Bayes}
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-Setosa}} & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0}          & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-versicolor}} & \multicolumn{1}{l|}{0,947}          & \multicolumn{1}{l|}{0,053}          & \multicolumn{1}{l|}{0,928}          & \multicolumn{1}{l|}{0,072} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-virginica}} & \multicolumn{1}{l|}{0,983}          & \multicolumn{1}{l|}{0,017}          & \multicolumn{1}{l|}{0,913}          & \multicolumn{1}{l|}{0,087}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+ 
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Iris} con el 80\% usando \emph{Naive Bayes}}
+	\label{tab:iris_bayes_80}
+\end{table}
 
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-Setosa}} & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0}          & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-versicolor}} & \multicolumn{1}{l|}{0,938}          & \multicolumn{1}{l|}{0,062}          & \multicolumn{1}{l|}{0,895}          & \multicolumn{1}{l|}{0,105} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-virginica}} & \multicolumn{1}{l|}{0,874}          & \multicolumn{1}{l|}{0,126}          & \multicolumn{1}{l|}{0,912}          & \multicolumn{1}{l|}{0,088}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Iris} con el 50\% usando \emph{Naive Bayes}}
+	\label{tab:iris_bayes_50}
+\end{table}
+
+
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-Setosa}} & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0}          & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-versicolor}} & \multicolumn{1}{l|}{0,904}          & \multicolumn{1}{l|}{0,096}          & \multicolumn{1}{l|}{0,814}          & \multicolumn{1}{l|}{0,186} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-virginica}} & \multicolumn{1}{l|}{0,883}          & \multicolumn{1}{l|}{0,117}          & \multicolumn{1}{l|}{0,932}          & \multicolumn{1}{l|}{0,068}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Iris} con el 20\% usando \emph{Naive Bayes}}
+	\label{tab:iris_bayes_20}
+\end{table}
+\newpage
+\subsubsection{J48}
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-Setosa}} & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0}          & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-versicolor}} & \multicolumn{1}{l|}{0,947}          & \multicolumn{1}{l|}{0,053}          & \multicolumn{1}{l|}{0,903}          & \multicolumn{1}{l|}{0,097} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-virginica}} & \multicolumn{1}{l|}{0,983}          & \multicolumn{1}{l|}{0,017}          & \multicolumn{1}{l|}{0,910}          & \multicolumn{1}{l|}{0,090}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Iris} con el 80\% usando \emph{J48}}
+	\label{tab:iris_j48_80}
+\end{table}
+
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-Setosa}} & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0}          & \multicolumn{1}{l|}{0,968}          & \multicolumn{1}{l|}{0,032} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-versicolor}} & \multicolumn{1}{l|}{0,952}          & \multicolumn{1}{l|}{0,048}          & \multicolumn{1}{l|}{0,909}          & \multicolumn{1}{l|}{0,091} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-virginica}} & \multicolumn{1}{l|}{0,886}          & \multicolumn{1}{l|}{0,114}          & \multicolumn{1}{l|}{0,885}          & \multicolumn{1}{l|}{0,115}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Iris} con el 50\% usando \emph{J48}}
+	\label{tab:iris_j48_50}
+\end{table}
+
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-Setosa}} & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0}          & \multicolumn{1}{l|}{0,922}          & \multicolumn{1}{l|}{0,078} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-versicolor}} & \multicolumn{1}{l|}{0,935}          & \multicolumn{1}{l|}{0,065}          & \multicolumn{1}{l|}{0,910}          & \multicolumn{1}{l|}{0,090} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-virginica}} & \multicolumn{1}{l|}{0,907}          & \multicolumn{1}{l|}{0,093}          & \multicolumn{1}{l|}{0,942}          & \multicolumn{1}{l|}{0,058}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Iris} con el 20\% usando \emph{J48}}
+	\label{tab:iris_j48_20}
+\end{table}
+\subsubsection{Perceptrón multicapa}
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-Setosa}} & \multicolumn{1}{l|}{0,8}          & \multicolumn{1}{l|}{0,2}          & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-versicolor}} & \multicolumn{1}{l|}{0,865}          & \multicolumn{1}{l|}{0,135}          & \multicolumn{1}{l|}{0,883}          & \multicolumn{1}{l|}{0,117} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-virginica}} & \multicolumn{1}{l|}{0,860}          & \multicolumn{1}{l|}{0,140}          & \multicolumn{1}{l|}{0,822}          & \multicolumn{1}{l|}{0,178}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Iris} con el 80\% usando \emph{Perceptrón multicapa}}
+	\label{tab:iris_percep_80}
+\end{table}
+
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-Setosa}} & \multicolumn{1}{l|}{0,984}          & \multicolumn{1}{l|}{0,016}          & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-versicolor}} & \multicolumn{1}{l|}{0,898}          & \multicolumn{1}{l|}{0,102}          & \multicolumn{1}{l|}{0,933}          & \multicolumn{1}{l|}{0,066} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-virginica}} & \multicolumn{1}{l|}{0,915}          & \multicolumn{1}{l|}{0,085}          & \multicolumn{1}{l|}{0,947}          & \multicolumn{1}{l|}{0,053}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Iris} con el 50\% usando \emph{Perceptrón multicapa}}
+	\label{tab:iris_percep_50}
+\end{table}
+
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-Setosa}} & \multicolumn{1}{l|}{0,995}          & \multicolumn{1}{l|}{0,005}          & \multicolumn{1}{l|}{0,995}          & \multicolumn{1}{l|}{0,005} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-versicolor}} & \multicolumn{1}{l|}{0,797}          & \multicolumn{1}{l|}{0,203}          & \multicolumn{1}{l|}{0,885}          & \multicolumn{1}{l|}{0,115} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{Iris-virginica}} & \multicolumn{1}{l|}{0,853}          & \multicolumn{1}{l|}{0,147}          & \multicolumn{1}{l|}{0,832}          & \multicolumn{1}{l|}{0,168}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Iris} con el 20\% usando \emph{Perceptrón multicapa}}
+	\label{tab:iris_percep_20}
+\end{table}
 
 \end{document}
