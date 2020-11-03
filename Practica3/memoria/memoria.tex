@@ -35,7 +35,7 @@
 \newpage
 \section{Ejercicio 1}
 
-Se ha creado el \emph{workflow} ilustrado en la Figura \textbf{numFigura} para trabajar con los datos del conjunto de datos \emph{yellow-small.data}.\\
+Se ha creado el \emph{workflow} ilustrado en la Figura \ref{fig:workflow_ej1} para trabajar con los datos del conjunto de datos \emph{yellow-small.data}.\\
 Se ha utilizado un nodo \emph{Rule Engine} para crear una nueva columna \emph{``class''}. El contenido de este nodo son las siguientes reglas:
 
 \begin{lstlisting}
@@ -49,17 +49,22 @@ Tras este nodo se ha utilizado un nodo \emph{String manipulation} para concatena
 string($class$ + " is " + $Inflated (True/False)$)
 \end{lstlisting}
 
-{\Huge \textbf{Meter figura aqui}}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{images/workflow_ej1.png}
+	\caption{Workflow del ejercicio 1}
+	\label{fig:workflow_ej1}
+\end{figure}
 
 \section{Ejercicio 2}
 
 Se va a proceder a analizar un conjunto de datos que describe el número de visitantes de un sitio web en los meses de junio/julio de 2010 (fichero \emph{website1.txt}).\\
 
-Para calcular los parámetros de media, desviación típica, Kurtosis se ha utilizado el \emph{workflow} mostrado en la Figura \textbf{numFigura}.\\
+Para calcular los parámetros de media, desviación típica, Kurtosis se ha utilizado el \emph{workflow} mostrado en la Figura \ref{fig:workflow_ej2}.\\
 La \emph{Kurtosis} es una medida estadística que muestra la forma de una distribución de probabilidad. Una \emph{Kurtosis} grande implica una mayor concentración de valores de la variables o muy cerca de la media de la distribución (pico) o muy lejos de ella (colas de la distribución), al mismo tiempo que existe una menor frecuencia de valores intermedios.\\
 \textbf{¿Cómo ilustramos esto en este conjunto de datos?}\\
 
-Para entrenar la red Bayesiana (Figura \textbf{numFigura}) se deben preparar los datos. Para ello se debe crear una nueva columna \emph{isWeekend} para ilustrar si es fin de semana o no. Utilizando el nodo \emph{Rule engine} se utilizarán las siguientes reglas:
+Para entrenar la red Bayesiana (Figura \ref{fig:workflow_ej2}) se deben preparar los datos. Para ello se debe crear una nueva columna \emph{isWeekend} para ilustrar si es fin de semana o no. Utilizando el nodo \emph{Rule engine} se utilizarán las siguientes reglas:
 
 \begin{lstlisting}
 $weekday$ MATCHES "Sat" => "Yes"
@@ -74,14 +79,19 @@ Para llegar a esta conclusión se han probado las distintas combinaciones de col
 Para dibujar la curva \emph{ROC} se ha utilizado un nodo \emph{ROC Cuve (local)} a la salida del nodo \emph{Naive Bayes Predictor}. Se puede observar en la Figura \textbf{numFigura} que la forma de la gráfica... \textbf{(?)}.\\
 
 
-{\Huge \textbf{Meter figura aqui}}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{images/workflow_ej2.png}
+	\caption{Workflow de ejercicio 2}
+	\label{fig:workflow_ej2}
+\end{figure}
 
 {\Huge \textbf{Meter gráfica aqui}}
 
 
 \section{Ejercicio 3}
 
-Para la evaluación de los distintos conjuntos de datos se han creado 2 \emph{workflows}. Uno de ellos (Figura \textbf{numFigura}) utiliza las herramientas de \emph{KNIME} para evaluar los datos. El otro (Figura \textbf{numFigura}) utiliza las herramientas de \emph{WEKA} para evaluar los datos.\\
+Para la evaluación de los distintos conjuntos de datos se han creado 2 \emph{workflows}. Uno de ellos (Figura \ref{fig:workflow_knime}) utiliza las herramientas de \emph{KNIME} para evaluar los datos. El otro (Figura \ref{fig:workflow_weka}) utiliza las herramientas de \emph{WEKA} para evaluar los datos.\\
 
 Para el conjunto de datos \emph{wine} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.\\
 Para el conjunto de datos \emph{iris} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.\\
@@ -95,14 +105,14 @@ En cuanto a los problemas que han surgido, con el \emph{dataset} \emph{adult} se
 Para simplificar y agilizar el entrenamiento y ejecución de cada uno de los clasificadores, se han creado dos \textit{workflows}, uno que agrupa todos los clasificadores que provee el propio \textit{Knime}\ref{fig:workflow_knime} y otro que agrupa los nodos que proporciona el \textit{plugin} de \textit{Weka}\ref{fig:workflow_weka}.
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.5]{images/workflow_weka.png}
+	\includegraphics[scale=0.5]{images/workflow_ej3_weka.png}
 	\caption{Workflow con modelos de entrenamiento de \textit{Weka}}
 	\label{fig:workflow_weka}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[scale=0.5]{images/workflow_knime.png}
+	\includegraphics[scale=0.5]{images/workflow_ej3_knime.png}
 	\caption{Workflow con modelos de entrenamiento de \textit{Knime}}
 	\label{fig:workflow_knime}
 \end{figure}
