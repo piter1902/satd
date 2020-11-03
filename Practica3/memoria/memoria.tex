@@ -92,12 +92,14 @@ Para dibujar la curva \emph{ROC} se ha utilizado un nodo \emph{ROC Cuve (local)}
 \section{Ejercicio 3}
 
 Para la evaluación de los distintos conjuntos de datos se han creado 2 \emph{workflows}. Uno de ellos (Figura \ref{fig:workflow_knime}) utiliza las herramientas de \emph{KNIME} para evaluar los datos. El otro (Figura \ref{fig:workflow_weka}) utiliza las herramientas de \emph{WEKA} para evaluar los datos.\\
-
+En el anexo se pueden observar las tablas comparativas de las distintas ejecuciones de los \emph{workflows} tanto con \emph{KNIME} (K) como con \emph{WEKA} (W).
 Para el conjunto de datos \emph{wine} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.\\
-Para el conjunto de datos \emph{iris} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.\\
+Para el conjunto de datos \emph{iris} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\% de los datos.\\ Se puede observar que en todos los modelos se obtienen los resultados más precisos cuando se usa un mayor número de datos de entrenamiento (80\%), llegando en algunos casos a clasificar correctamente el 100\% de los elementos pertenecientes a la clase \textit{Iris-Setosa}, ya que la tasa de \textit{True Positives} es 1.\par
+Los peores resultados se han obtenido con el modelo de \textit{perteptrón multicapa}, sobre todo con los nodos de \textit{Knime}, ya que la media de \textit{True Positives} ronda el 80\% para cada una de las clases.
+La mayor tasa de \textit{True Positives} se ha obtenido con el modelo \textit{J48}, sobre todo con los nodos de \textit{Knime}, ya que se obtiene una media de \textit{True Positives} superior al 90\% para cada una de las clases, llegando incluso al 100\% para la clase \textit{Iris-Setosa}. El modelo \textit{Naive Bayes} consigue unos resultados muy parecidos al de \textit{J48}, sobre todo con los nodos de \textit{Weka}.
 
 Para el conjunto de datos \emph{adult} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.
-En el anexo se pueden observar las tablas comparativas de las distintas ejecuciones del \emph{workflow} tanto con \emph{KNIME} (K) como con \emph{WEKA} (W). Se puede apreciar que conforme se reduce el número de datos de entrenamiento se pierde precisión, identificando datos pertenecientes a la otra clase de datos ($>$50K) como datos de clase $<=$50K. El método que más ha errado en la identificación de las clases ha sido el perceptrón multicapa.\\
+Se puede apreciar que conforme se reduce el número de datos de entrenamiento se pierde precisión, identificando datos pertenecientes a la otra clase de datos ($>$50K) como datos de clase $<=$50K. El método que más ha errado en la identificación de las clases ha sido el perceptrón multicapa.\\
 El método que menos ha variado la precisión conforme se entrenaba con menos datos ha sido el \emph{J48} y en especial utilizando los nodos de \emph{WEKA} siempre ha mantenido el porcentaje de \emph{True Positives} por encima del 93\% en la clase $<=$50K y del 60\% en la clase $>$50K.\\
 
 En cuanto a los problemas que han surgido, con el \emph{dataset} \emph{adult} se necesitaba una columna \emph{Class} y por lo tanto, se ha renombrado la última columna a \emph{``Class''}. Para ello se ha utilizado un nodo \emph{Column Filter} para eliminar todas las variables no numéricas.\\
@@ -212,7 +214,7 @@ De esta manera en cada \textit{Workflow} se indica el \textit{dataset} deseado c
 \label{tab:adult_perceptron_80}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[h!]
 \begin{tabular}{lllll}
 \hline
 \multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
@@ -224,7 +226,7 @@ De esta manera en cada \textit{Workflow} se indica el \textit{dataset} deseado c
 \label{tab:adult_perceptron_50}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[h!]
 \begin{tabular}{lllll}
 \hline
 \multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
@@ -236,7 +238,7 @@ De esta manera en cada \textit{Workflow} se indica el \textit{dataset} deseado c
 \label{tab:adult_perceptron_30}
 \end{table}
 
-
+\newpage
 \subsection{Dataset Iris}
 \subsubsection{Naive Bayes}
 \begin{table}[h!]
