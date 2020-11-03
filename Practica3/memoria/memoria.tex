@@ -369,4 +369,136 @@ De esta manera en cada \textit{Workflow} se indica el \textit{dataset} deseado c
 	\label{tab:iris_percep_20}
 \end{table}
 
+\newpage
+\subsection{Dataset Wine}
+
+\subsubsection{Naive Bayes}
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{1}} & \multicolumn{1}{l|}{0,968}          & \multicolumn{1}{l|}{0,031}          & \multicolumn{1}{l|}{0,966}          & \multicolumn{1}{l|}{0,033} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{2}} & \multicolumn{1}{l|}{0,959}          & \multicolumn{1}{l|}{0,040}          & \multicolumn{1}{l|}{0,939}          & \multicolumn{1}{l|}{0,060} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{3}} & \multicolumn{1}{l|}{0,984}          & \multicolumn{1}{l|}{0,015}          & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+ 
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Wine} con el 80\% usando \emph{Naive Bayes}}
+	\label{tab:wine_bayes_80}
+\end{table}
+
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{1}} & \multicolumn{1}{l|}{0,961}          & \multicolumn{1}{l|}{0,038}          & \multicolumn{1}{l|}{0,956}          & \multicolumn{1}{l|}{0,043} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{2}} & \multicolumn{1}{l|}{0,953}          & \multicolumn{1}{l|}{0,056}          & \multicolumn{1}{l|}{0,943}          & \multicolumn{1}{l|}{0,105} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{3}} & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0}          & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{1}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Wine} con el 50\% usando \emph{Naive Bayes}}
+	\label{tab:wine_bayes_50}
+\end{table}
+
+
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{1}} & \multicolumn{1}{l|}{0,955}          & \multicolumn{1}{l|}{0,044}          & \multicolumn{1}{l|}{0,978}          & \multicolumn{1}{l|}{0,021} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{2}} & \multicolumn{1}{l|}{0,946}          & \multicolumn{1}{l|}{0,053}          & \multicolumn{1}{l|}{0,944}          & \multicolumn{1}{l|}{0,055} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{3}} & \multicolumn{1}{l|}{0,994}          & \multicolumn{1}{l|}{0,005}          & \multicolumn{1}{l|}{0,983}          & \multicolumn{1}{l|}{0,016}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Wine} con el 30\% usando \emph{Naive Bayes}}
+	\label{tab:wine_bayes_30}
+\end{table}
+\newpage
+\subsubsection{J48}
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{1}} & \multicolumn{1}{l|}{0,941}          & \multicolumn{1}{l|}{0,058}          & \multicolumn{1}{l|}{0,984}          & \multicolumn{1}{l|}{0,015} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{2}} & \multicolumn{1}{l|}{0,887}          & \multicolumn{1}{l|}{0,112}          & \multicolumn{1}{l|}{0,923}          & \multicolumn{1}{l|}{0,076} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{3}} & \multicolumn{1}{l|}{0,860}          & \multicolumn{1}{l|}{0,139}          & \multicolumn{1}{l|}{0,969}          & \multicolumn{1}{l|}{0,030}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Wine} con el 80\% usando \emph{J48}}
+	\label{tab:wine_j48_80}
+\end{table}
+
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{1}} & \multicolumn{1}{l|}{0,944}          & \multicolumn{1}{l|}{0,055}          & \multicolumn{1}{l|}{0,906}          & \multicolumn{1}{l|}{0,093} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{2}} & \multicolumn{1}{l|}{0,880}          & \multicolumn{1}{l|}{0,119}          & \multicolumn{1}{l|}{0,886}          & \multicolumn{1}{l|}{0,113} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{3}} & \multicolumn{1}{l|}{0,849}          & \multicolumn{1}{l|}{0,150}          & \multicolumn{1}{l|}{0,825}          & \multicolumn{1}{l|}{0,174}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Wine} con el 50\% usando \emph{J48}}
+	\label{tab:wine_j48_50}
+\end{table}
+
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{1}} & \multicolumn{1}{l|}{0,846}          & \multicolumn{1}{l|}{0,153}          & \multicolumn{1}{l|}{0,949}          & \multicolumn{1}{l|}{0,050} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{2}} & \multicolumn{1}{l|}{0,867}          & \multicolumn{1}{l|}{0,132}          & \multicolumn{1}{l|}{0,864}          & \multicolumn{1}{l|}{0,135} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{3}} & \multicolumn{1}{l|}{0,858}          & \multicolumn{1}{l|}{0,141}          & \multicolumn{1}{l|}{0,871}          & \multicolumn{1}{l|}{0,128}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Wine} con el 30\% usando \emph{J48}}
+	\label{tab:wine_j48_30}
+\end{table}
+\subsubsection{Perceptrón multicapa}
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{1}} & \multicolumn{1}{l|}{0,966}          & \multicolumn{1}{l|}{0,033}          & \multicolumn{1}{l|}{0,986}          & \multicolumn{1}{l|}{0,013} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{2}} & \multicolumn{1}{l|}{0,913}          & \multicolumn{1}{l|}{0,086}          & \multicolumn{1}{l|}{0,967}          & \multicolumn{1}{l|}{0,032} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{3}} & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0}          & \multicolumn{1}{l|}{0,96}          & \multicolumn{1}{l|}{0,04}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Wine} con el 80\% usando \emph{Perceptrón multicapa}}
+	\label{tab:wine_percep_80}
+\end{table}
+
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{1}} & \multicolumn{1}{l|}{0,992}          & \multicolumn{1}{l|}{0,007}          & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{2}} & \multicolumn{1}{l|}{0,950}          & \multicolumn{1}{l|}{0,049}          & \multicolumn{1}{l|}{0,989}          & \multicolumn{1}{l|}{0,010} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{3}} & \multicolumn{1}{l|}{0,959}          & \multicolumn{1}{l|}{0,040}          & \multicolumn{1}{l|}{0,939}          & \multicolumn{1}{l|}{0,060}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Wine} con el 50\% usando \emph{Perceptrón multicapa}}
+	\label{tab:wine_percep_50}
+\end{table}
+
+\begin{table}[h!]
+	\begin{tabular}{lllll}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{Clase}} & \multicolumn{1}{c|}{\textbf{True Positives (K)}} & \multicolumn{1}{c|}{\textbf{False Positives (K)}} & \multicolumn{1}{c|}{\textbf{True Positives (W)}} & \multicolumn{1}{l|}{\textbf{False Positives (W)}} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{1}} & \multicolumn{1}{l|}{0,980}          & \multicolumn{1}{l|}{0,019}          & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{2}} & \multicolumn{1}{l|}{0,928}          & \multicolumn{1}{l|}{0,071}          & \multicolumn{1}{l|}{0,956}          & \multicolumn{1}{l|}{0,043} \\ \hline
+		\multicolumn{1}{|l|}{\textbf{3}} & \multicolumn{1}{l|}{0,977}          & \multicolumn{1}{l|}{0,022}          & \multicolumn{1}{l|}{1}          & \multicolumn{1}{l|}{0}\\ \hline
+		\textbf{}                       &                                &                                &                                &                      
+		
+	\end{tabular}
+	\caption{Datos de entrenamiento del dataset \emph{Wine} con el 30\% usando \emph{Perceptrón multicapa}}
+	\label{tab:wine_percep_20}
+\end{table}
+
 \end{document}
