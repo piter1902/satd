@@ -62,7 +62,7 @@ Se va a proceder a analizar un conjunto de datos que describe el número de visi
 
 Para calcular los parámetros de media, desviación típica, Kurtosis se ha utilizado el \emph{workflow} mostrado en la Figura \ref{fig:workflow_ej2}.\\
 La \emph{Kurtosis} es una medida estadística que muestra la forma de una distribución de probabilidad. Una \emph{Kurtosis} grande implica una mayor concentración de valores de la variables o muy cerca de la media de la distribución (pico) o muy lejos de ella (colas de la distribución), al mismo tiempo que existe una menor frecuencia de valores intermedios.\\
-{\LARGE \textbf{¿Cómo ilustramos esto en este conjunto de datos?}\\}
+Una \emph{Kurtosis} pequeña (como en este caso cuyo valor es 0.466) implica que los datos se establecen alrededor de la media, es decir, que el conjunto de datos no presenta \emph{datos atípicos}.\\
 
 Para entrenar la red Bayesiana (Figura \ref{fig:workflow_ej2}) se deben preparar los datos. Para ello se debe crear una nueva columna \emph{isWeekend} para ilustrar si es fin de semana o no. Utilizando el nodo \emph{Rule engine} se utilizarán las siguientes reglas:
 
@@ -108,6 +108,16 @@ Para el conjunto de datos \emph{adult} se han entrenado las distintas herramient
 Se puede apreciar que conforme se reduce el número de datos de entrenamiento se pierde precisión, identificando datos pertenecientes a la otra clase de datos ($>$50K) como datos de clase $<=$50K. El método que más ha errado en la identificación de las clases ha sido el perceptrón multicapa.\\
 El método que menos ha variado la precisión conforme se entrenaba con menos datos ha sido el \emph{J48} y en especial utilizando los nodos de \emph{WEKA} siempre ha mantenido el porcentaje de \emph{True Positives} por encima del 93\% en la clase $<=$50K y del 60\% en la clase $>$50K.\\
 
+Se ha planteado una gráfica (Figura \ref{fig:graficaComparativa}) para el conjunto de datos \emph{Iris} en la cual se compara la precisión de los distintos métodos conforme se van reduciendo los datos de entrenamiento. Se puede observar un descenso de la precisión en las clases \emph{Iris-Versicolor} e \emph{Iris-Virgínica} conforme se reducen los datos. Se puede observar como el perceptrón no varía especialmente conforme se reducen los datos de entrenamiento. Este fenómeno puede ocurrir debido a que el particionado de los datos se ha realizado de forma aleatoria con el nodo \emph{partitioning} y se han realizado 5 ejecuciones para hallar una media en la precisión de la identificación de las clases.\\
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.9]{images/comparacionMetodos.png}
+	\caption{Gráfica comparativa de los métodos para el dataset \emph{Iris}}
+	\label{fig:graficaComparativa}
+\end{figure}
+
+
 En cuanto a los problemas que han surgido, con el \emph{dataset} \emph{adult} se necesitaba una columna \emph{Class} y por lo tanto, se ha renombrado la última columna a \emph{``Class''}. Para ello se ha utilizado un nodo \emph{Column Filter} para eliminar todas las variables no numéricas.\\
 
 Para simplificar y agilizar el entrenamiento y ejecución de cada uno de los clasificadores, se han creado dos \textit{workflows}, uno que agrupa todos los clasificadores que provee la propia herramienta \textit{Knime} (Figura \ref{fig:workflow_knime}) y otro que agrupa los nodos que proporciona el \textit{plugin} de \textit{Weka} (Figura \ref{fig:workflow_weka}).
@@ -126,7 +136,7 @@ Para simplificar y agilizar el entrenamiento y ejecución de cada uno de los cla
 	\label{fig:workflow_knime}
 \end{figure}
 
-De esta manera en cada \textit{Workflow} se indica el \textit{dataset} deseado con el nodo \textit{File Reader} y se selecciona el \% de datos a entrenar con el nodo \textit{partitioning}. Los resultados se escriben en archivos \textit{csv} ditintos, indicados con los nodos \textit{csv wirter}. Así se centralizan los distintos modelos de entrenamiento con una sola ejecución.
+De esta manera en cada \textit{Workflow} se indica el \textit{dataset} deseado con el nodo \textit{File Reader} y se selecciona el porcentaje de datos a entrenar con el nodo \textit{partitioning}. Los resultados se escriben en archivos \textit{csv} distintos, indicados con los nodos \textit{CSV Writer}. Así se centralizan los diferentes modelos de entrenamiento con una sola ejecución.\\
 
 
 \newpage
