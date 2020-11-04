@@ -62,7 +62,7 @@ Se va a proceder a analizar un conjunto de datos que describe el número de visi
 
 Para calcular los parámetros de media, desviación típica, Kurtosis se ha utilizado el \emph{workflow} mostrado en la Figura \ref{fig:workflow_ej2}.\\
 La \emph{Kurtosis} es una medida estadística que muestra la forma de una distribución de probabilidad. Una \emph{Kurtosis} grande implica una mayor concentración de valores de la variables o muy cerca de la media de la distribución (pico) o muy lejos de ella (colas de la distribución), al mismo tiempo que existe una menor frecuencia de valores intermedios.\\
-\textbf{¿Cómo ilustramos esto en este conjunto de datos?}\\
+{\LARGE \textbf{¿Cómo ilustramos esto en este conjunto de datos?}\\}
 
 Para entrenar la red Bayesiana (Figura \ref{fig:workflow_ej2}) se deben preparar los datos. Para ello se debe crear una nueva columna \emph{isWeekend} para ilustrar si es fin de semana o no. Utilizando el nodo \emph{Rule engine} se utilizarán las siguientes reglas:
 
@@ -73,10 +73,9 @@ TRUE => "No"
 \end{lstlisting}
 
 Se ha utilizado un nodo \emph{Column filter} para eliminar la columna \emph{weekday} ya que la red Bayesiana presenta un mejor rendimiento si conoce este valor ya que si se entrena con esta variable reconoce la regla de creación de la columna \emph{isWeekend}.\\
-Para llegar a esta conclusión se han probado las distintas combinaciones de columnas utilizando el \emph{Column Filter}.\\
-\textbf{¿Explica más pruebas realizadas?}\\
+Para llegar a esta conclusión se han probado las distintas combinaciones de columnas utilizando el \emph{Column Filter}, eligiendo las columnas que se utilizarán para entrenar la red \emph{Bayesiana} y comparando con cual de ellas se obtiene un mejor rendimiento.\\
 
-Para dibujar la curva \emph{ROC} se ha utilizado un nodo \emph{ROC Cuve (local)} a la salida del nodo \emph{Naive Bayes Predictor}. Se puede observar en la Figura \textbf{numFigura} que la forma de la gráfica... \textbf{(?)}.\\
+Para dibujar la curva \emph{ROC} se ha utilizado un nodo \emph{ROC Curve} a la salida del nodo \emph{Naive Bayes Predictor}. Se puede observar en la Figura \ref{fig:curvaROC_ej2} que la gráfica se encuentra mayoritariamente en la sección superior del triángulo. Esto indica que el modelo es capaz de identificar correctamente los verdaderos positivos. La curva \emph{ROC} se utiliza para estudiar la sensibilidad y la especialidad de un test diagnóstico.\\
 
 
 \begin{figure}[h!]
@@ -86,7 +85,12 @@ Para dibujar la curva \emph{ROC} se ha utilizado un nodo \emph{ROC Cuve (local)}
 	\label{fig:workflow_ej2}
 \end{figure}
 
-{\Huge \textbf{Meter gráfica aqui}}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.5]{images/curva_ROC.png}
+	\caption{Curva ROC del ejercicio 2}
+	\label{fig:curvaROC_ej2}
+\end{figure}
 
 
 \section{Ejercicio 3}
@@ -94,6 +98,8 @@ Para dibujar la curva \emph{ROC} se ha utilizado un nodo \emph{ROC Cuve (local)}
 Para la evaluación de los distintos conjuntos de datos se han creado 2 \emph{workflows}. Uno de ellos (Figura \ref{fig:workflow_knime}) utiliza las herramientas de \emph{KNIME} para evaluar los datos. El otro (Figura \ref{fig:workflow_weka}) utiliza las herramientas de \emph{WEKA} para evaluar los datos.\\
 En el anexo se pueden observar las tablas comparativas de las distintas ejecuciones de los \emph{workflows} tanto con \emph{KNIME} (K) como con \emph{WEKA} (W).
 Para el conjunto de datos \emph{wine} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.\\
+{\LARGE \textbf{Chus mete tus observaciones aquí.}}\\
+
 Para el conjunto de datos \emph{iris} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\% de los datos.\\ Se puede observar que en todos los modelos se obtienen los resultados más precisos cuando se usa un mayor número de datos de entrenamiento (80\%), llegando en algunos casos a clasificar correctamente el 100\% de los elementos pertenecientes a la clase \textit{Iris-Setosa}, ya que la tasa de \textit{True Positives} es 1.\par
 Los peores resultados se han obtenido con el modelo de \textit{perteptrón multicapa}, sobre todo con los nodos de \textit{Knime}, ya que la media de \textit{True Positives} ronda el 80\% para cada una de las clases.
 La mayor tasa de \textit{True Positives} se ha obtenido con el modelo \textit{J48}, sobre todo con los nodos de \textit{Knime}, ya que se obtiene una media de \textit{True Positives} superior al 90\% para cada una de las clases, llegando incluso al 100\% para la clase \textit{Iris-Setosa}. El modelo \textit{Naive Bayes} consigue unos resultados muy parecidos al de \textit{J48}, sobre todo con los nodos de \textit{Weka}.
@@ -104,7 +110,8 @@ El método que menos ha variado la precisión conforme se entrenaba con menos da
 
 En cuanto a los problemas que han surgido, con el \emph{dataset} \emph{adult} se necesitaba una columna \emph{Class} y por lo tanto, se ha renombrado la última columna a \emph{``Class''}. Para ello se ha utilizado un nodo \emph{Column Filter} para eliminar todas las variables no numéricas.\\
 
-Para simplificar y agilizar el entrenamiento y ejecución de cada uno de los clasificadores, se han creado dos \textit{workflows}, uno que agrupa todos los clasificadores que provee el propio \textit{Knime}\ref{fig:workflow_knime} y otro que agrupa los nodos que proporciona el \textit{plugin} de \textit{Weka}\ref{fig:workflow_weka}.
+Para simplificar y agilizar el entrenamiento y ejecución de cada uno de los clasificadores, se han creado dos \textit{workflows}, uno que agrupa todos los clasificadores que provee la propia herramienta \textit{Knime} (Figura \ref{fig:workflow_knime}) y otro que agrupa los nodos que proporciona el \textit{plugin} de \textit{Weka} (Figura \ref{fig:workflow_weka}).
+
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.5]{images/workflow_ej3_weka.png}
@@ -118,7 +125,10 @@ Para simplificar y agilizar el entrenamiento y ejecución de cada uno de los cla
 	\caption{Workflow con modelos de entrenamiento de \textit{Knime}}
 	\label{fig:workflow_knime}
 \end{figure}
+
 De esta manera en cada \textit{Workflow} se indica el \textit{dataset} deseado con el nodo \textit{File Reader} y se selecciona el \% de datos a entrenar con el nodo \textit{partitioning}. Los resultados se escriben en archivos \textit{csv} ditintos, indicados con los nodos \textit{csv wirter}. Así se centralizan los distintos modelos de entrenamiento con una sola ejecución.
+
+
 \newpage
 \section{Anexo 1: Cuadros de datos ejercicio 3}
 
