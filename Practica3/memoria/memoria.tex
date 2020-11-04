@@ -98,7 +98,10 @@ Para dibujar la curva \emph{ROC} se ha utilizado un nodo \emph{ROC Curve} a la s
 Para la evaluación de los distintos conjuntos de datos se han creado 2 \emph{workflows}. Uno de ellos (Figura \ref{fig:workflow_knime}) utiliza las herramientas de \emph{KNIME} para evaluar los datos. El otro (Figura \ref{fig:workflow_weka}) utiliza las herramientas de \emph{WEKA} para evaluar los datos.\\
 En el anexo se pueden observar las tablas comparativas de las distintas ejecuciones de los \emph{workflows} tanto con \emph{KNIME} (K) como con \emph{WEKA} (W).
 Para el conjunto de datos \emph{wine} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.\\
-{\LARGE \textbf{Chus mete tus observaciones aquí.}}\\
+
+Para el conjunto de datos \emph{wine} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.
+Se puede apreciar que conforme se reduce el número de datos de entrenamiento se pierde precisión, aunque de de una manera muy ligera ya que no es un conjunto grande de datos ni se ha ejecutado una cantidad grande de veces para que se estabilicen los resultados. El método que mejor ha funcionado identificando de las clases ha sido el perceptrón multicapa, ya que se ha utilizado la configuración del perceptrón que mejor funcionaba en la anterior práctica.\\
+Cabe destacar que tanto el perceptrón multicapa como Naive Bayes realizan una clasificación del tipo 3 muy correcta, pero J48 erra bastante con respecto a los dos anteriores, prácticamente siempre por debajo del 0.9 de TP.
 
 Para el conjunto de datos \emph{iris} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\% de los datos.\\ Se puede observar que en todos los modelos se obtienen los resultados más precisos cuando se usa un mayor número de datos de entrenamiento (80\%), llegando en algunos casos a clasificar correctamente el 100\% de los elementos pertenecientes a la clase \textit{Iris-Setosa}, ya que la tasa de \textit{True Positives} es 1.\par
 Los peores resultados se han obtenido con el modelo de \textit{perteptrón multicapa}, sobre todo con los nodos de \textit{Knime}, ya que la media de \textit{True Positives} ronda el 80\% para cada una de las clases.
