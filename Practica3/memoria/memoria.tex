@@ -96,16 +96,15 @@ Para dibujar la curva \emph{ROC} se ha utilizado un nodo \emph{ROC Curve} a la s
 \section{Ejercicio 3}
 
 Para la evaluación de los distintos conjuntos de datos se han creado 2 \emph{workflows}. Uno de ellos (Figura \ref{fig:workflow_knime}) utiliza las herramientas de \emph{KNIME} para evaluar los datos. El otro (Figura \ref{fig:workflow_weka}) utiliza las herramientas de \emph{WEKA} para evaluar los datos.\\
-En el anexo se pueden observar las tablas comparativas de las distintas ejecuciones de los \emph{workflows} tanto con \emph{KNIME} (K) como con \emph{WEKA} (W).
+En el anexo se pueden observar las tablas comparativas de las distintas ejecuciones de los \emph{workflows} tanto con \emph{KNIME} (K) como con \emph{WEKA} (W).\\
 Para el conjunto de datos \emph{wine} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.\\
-
 Para el conjunto de datos \emph{wine} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.
 Se puede apreciar que conforme se reduce el número de datos de entrenamiento se pierde precisión, aunque de de una manera muy ligera ya que no es un conjunto grande de datos ni se ha ejecutado una cantidad grande de veces para que se estabilicen los resultados. El método que mejor ha funcionado identificando de las clases ha sido el perceptrón multicapa, ya que se ha utilizado la configuración del perceptrón que mejor funcionaba en la anterior práctica.\\
-Cabe destacar que tanto el perceptrón multicapa como Naive Bayes realizan una clasificación del tipo 3 muy correcta, pero J48 erra bastante con respecto a los dos anteriores, prácticamente siempre por debajo del 0.9 de TP.
+Cabe destacar que tanto el perceptrón multicapa como Naive Bayes realizan una clasificación del tipo 3 muy correcta, pero J48 erra bastante con respecto a los dos anteriores, prácticamente siempre por debajo del 0.9 de TP.\\
 
 Para el conjunto de datos \emph{iris} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\% de los datos.\\ Se puede observar que en todos los modelos se obtienen los resultados más precisos cuando se usa un mayor número de datos de entrenamiento (80\%), llegando en algunos casos a clasificar correctamente el 100\% de los elementos pertenecientes a la clase \textit{Iris-Setosa}, ya que la tasa de \textit{True Positives} es 1.\par
 Los peores resultados se han obtenido con el modelo de \textit{perteptrón multicapa}, sobre todo con los nodos de \textit{Knime}, ya que la media de \textit{True Positives} ronda el 80\% para cada una de las clases.
-La mayor tasa de \textit{True Positives} se ha obtenido con el modelo \textit{J48}, sobre todo con los nodos de \textit{Knime}, ya que se obtiene una media de \textit{True Positives} superior al 90\% para cada una de las clases, llegando incluso al 100\% para la clase \textit{Iris-Setosa}. El modelo \textit{Naive Bayes} consigue unos resultados muy parecidos al de \textit{J48}, sobre todo con los nodos de \textit{Weka}.
+La mayor tasa de \textit{True Positives} se ha obtenido con el modelo \textit{J48}, sobre todo con los nodos de \textit{Knime}, ya que se obtiene una media de \textit{True Positives} superior al 90\% para cada una de las clases, llegando incluso al 100\% para la clase \textit{Iris-Setosa}. El modelo \textit{Naive Bayes} consigue unos resultados muy parecidos al de \textit{J48}, sobre todo con los nodos de \textit{Weka}.\\
 
 Para el conjunto de datos \emph{adult} se han entrenado las distintas herramientas con el 80\%, 50\% y 30\%.
 Se puede apreciar que conforme se reduce el número de datos de entrenamiento se pierde precisión, identificando datos pertenecientes a la otra clase de datos ($>$50K) como datos de clase $<=$50K. El método que más ha errado en la identificación de las clases ha sido el perceptrón multicapa.\\
@@ -121,7 +120,7 @@ Se ha planteado una gráfica (Figura \ref{fig:graficaComparativa}) para el conju
 \end{figure}
 
 
-En cuanto a los problemas que han surgido, con el \emph{dataset} \emph{adult} se necesitaba una columna \emph{Class} y por lo tanto, se ha renombrado la última columna a \emph{``Class''}. Para ello se ha utilizado un nodo \emph{Column Filter} para eliminar todas las variables no numéricas.\\
+En cuanto a los problemas que han surgido, con el \emph{dataset} \emph{adult} se necesitaba una columna \emph{Class} y por lo tanto, se ha renombrado la última columna a \emph{``Class''}. Para ello se ha utilizado un nodo \emph{Column Filter} para eliminar todas las variables no numéricas (a excepción de la columna \emph{``Class''}).\\
 
 Para simplificar y agilizar el entrenamiento y ejecución de cada uno de los clasificadores, se han creado dos \textit{workflows}, uno que agrupa todos los clasificadores que provee la propia herramienta \textit{Knime} (Figura \ref{fig:workflow_knime}) y otro que agrupa los nodos que proporciona el \textit{plugin} de \textit{Weka} (Figura \ref{fig:workflow_weka}).
 
