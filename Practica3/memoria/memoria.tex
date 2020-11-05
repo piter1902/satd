@@ -122,7 +122,8 @@ Se ha planteado una gráfica (Figura \ref{fig:graficaComparativa}) para el conju
 
 En cuanto a los problemas que han surgido, con el \emph{dataset} \emph{adult} se necesitaba una columna \emph{Class} y por lo tanto, se ha renombrado la última columna a \emph{``Class''}. Para ello se ha utilizado un nodo \emph{Column Filter} para eliminar todas las variables no numéricas (a excepción de la columna \emph{``Class''}).\\
 
-Para simplificar y agilizar el entrenamiento y ejecución de cada uno de los clasificadores, se han creado dos \textit{workflows}, uno que agrupa todos los clasificadores que provee la propia herramienta \textit{Knime} (Figura \ref{fig:workflow_knime}) y otro que agrupa los nodos que proporciona el \textit{plugin} de \textit{Weka} (Figura \ref{fig:workflow_weka}).
+Para simplificar y agilizar el entrenamiento y ejecución de cada uno de los clasificadores, se han creado dos \textit{workflows}, uno que agrupa todos los clasificadores que provee la propia herramienta \textit{Knime} (Figura \ref{fig:workflow_knime}) y otro que agrupa los nodos que proporciona el \textit{plugin} de \textit{Weka} (Figura \ref{fig:workflow_weka}).\\
+
 
 \begin{figure}[h!]
 	\centering
@@ -130,6 +131,7 @@ Para simplificar y agilizar el entrenamiento y ejecución de cada uno de los cla
 	\caption{Workflow con modelos de entrenamiento de \textit{Weka}}
 	\label{fig:workflow_weka}
 \end{figure}
+
 
 \begin{figure}[h!]
 	\centering
@@ -139,7 +141,6 @@ Para simplificar y agilizar el entrenamiento y ejecución de cada uno de los cla
 \end{figure}
 
 De esta manera en cada \textit{Workflow} se indica el \textit{dataset} deseado con el nodo \textit{File Reader} y se selecciona el porcentaje de datos a entrenar con el nodo \textit{partitioning}. Los resultados se escriben en archivos \textit{csv} distintos, indicados con los nodos \textit{CSV Writer}. Así se centralizan los diferentes modelos de entrenamiento con una sola ejecución.\\
-
 
 \newpage
 \section{Anexo 1: Cuadros de datos ejercicio 3}
@@ -302,8 +303,8 @@ De esta manera en cada \textit{Workflow} se indica el \textit{dataset} deseado c
 		\textbf{}                       &                                &                                &                                &                      
 		
 	\end{tabular}
-	\caption{Datos de entrenamiento del dataset \emph{Iris} con el 20\% usando \emph{Naive Bayes}}
-	\label{tab:iris_bayes_20}
+	\caption{Datos de entrenamiento del dataset \emph{Iris} con el 30\% usando \emph{Naive Bayes}}
+	\label{tab:iris_bayes_30}
 \end{table}
 \newpage
 \subsubsection{J48}
@@ -345,8 +346,8 @@ De esta manera en cada \textit{Workflow} se indica el \textit{dataset} deseado c
 		\textbf{}                       &                                &                                &                                &                      
 		
 	\end{tabular}
-	\caption{Datos de entrenamiento del dataset \emph{Iris} con el 20\% usando \emph{J48}}
-	\label{tab:iris_j48_20}
+	\caption{Datos de entrenamiento del dataset \emph{Iris} con el 30\% usando \emph{J48}}
+	\label{tab:iris_j48_30}
 \end{table}
 \subsubsection{Perceptrón multicapa}
 \begin{table}[h!]
@@ -387,8 +388,8 @@ De esta manera en cada \textit{Workflow} se indica el \textit{dataset} deseado c
 		\textbf{}                       &                                &                                &                                &                      
 		
 	\end{tabular}
-	\caption{Datos de entrenamiento del dataset \emph{Iris} con el 20\% usando \emph{Perceptrón multicapa}}
-	\label{tab:iris_percep_20}
+	\caption{Datos de entrenamiento del dataset \emph{Iris} con el 30\% usando \emph{Perceptrón multicapa}}
+	\label{tab:iris_percep_30}
 \end{table}
 
 \newpage
@@ -520,7 +521,7 @@ De esta manera en cada \textit{Workflow} se indica el \textit{dataset} deseado c
 		
 	\end{tabular}
 	\caption{Datos de entrenamiento del dataset \emph{Wine} con el 30\% usando \emph{Perceptrón multicapa}}
-	\label{tab:wine_percep_20}
+	\label{tab:wine_percep_30}
 \end{table}
 
 \end{document}
