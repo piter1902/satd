@@ -1,4 +1,4 @@
-package MaterialP4.Ejercicio1;
+package Ejercicio1;
 
 import jade.core.behaviours.CyclicBehaviour;
 

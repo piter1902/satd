@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MaterialP4.Ejercicio3;
+package Ejercicio3;
 
 import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;

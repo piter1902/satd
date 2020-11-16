@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package MaterialP4.Ejercicio3;
+package Ejercicio3;
 import jade.core.Agent;
-
 /**
  *
  * @author goyo
  */
-public class Ej3_EmisorPasajeVuelo extends Agent{
+public class Ej3_ReceptorPasajeVuelo extends Agent{
     protected void setup(){
-    addBehaviour( new Ej3_EmisorPasajeVuelo_Comportamiento());
+    addBehaviour( new Ej3_ReceptorPasajeVuelo_Comportamiento());
     } 
     
     protected void takeDown(){
