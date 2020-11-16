@@ -43,6 +43,7 @@ public class Ej2_Envia_FSM extends FSMBehaviour {
         registerFirstState(new OneShotBehaviour() {
             @Override
             public void action() {
+                System.out.printf("Agente: %s . Estado inicial (Enviar numero)\n", myAgent.getLocalName());
                 ACLMessage aclMessage = new ACLMessage(ACLMessage.REQUEST);
                 receiver = new AID(RECV_NAME, AID.ISLOCALNAME);
 
@@ -61,12 +62,14 @@ public class Ej2_Envia_FSM extends FSMBehaviour {
         registerState(new OneShotBehaviour() {
             @Override
             public void action() {
+                System.out.printf("Agente: %s . Estado: Enviar texto\n", myAgent.getLocalName());
                 ACLMessage aclMessage = new ACLMessage(ACLMessage.REQUEST);
                 aclMessage.addReceiver(receiver);
                 aclMessage.setContent(TEXT);
 
                 myAgent.send(aclMessage);
                 contador--;
+                System.out.printf("Agente %s . Enviado. Quedan %d envios", myAgent.getLocalName(), contador);
             }
 
             @Override
@@ -78,7 +81,9 @@ public class Ej2_Envia_FSM extends FSMBehaviour {
         registerState(new OneShotBehaviour() {
             @Override
             public void action() {
+                System.out.printf("Agente: %s . Estado: Recibir texto\n", myAgent.getLocalName());
                 ACLMessage aclMessage = myAgent.blockingReceive();
+                System.out.printf("Agente %s . Recibido: %s\n", myAgent.getLocalName(), aclMessage.getContent());
             }
 
             @Override

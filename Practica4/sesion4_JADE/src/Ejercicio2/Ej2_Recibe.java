@@ -14,7 +14,9 @@ public class Ej2_Recibe extends Agent {
     protected void setup() {
         System.out.println("Hola, soy el agente " + getLocalName());
 
-        addBehaviour(new Ej2_Recibe_Behaviour());
+        addBehaviour(new Ej2_Recibe_FSM(this));
+
+//        addBehaviour(new Ej2_Recibe_Behaviour());
 
     }
 
