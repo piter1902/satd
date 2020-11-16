@@ -47,6 +47,7 @@ public class Ej2_Recibe_FSM extends FSMBehaviour {
 
                 contador = Integer.parseInt(aclMessage.getContent());
                 receiver = aclMessage.getSender();
+                System.out.printf("Agente %s . Contador=%d . Emisor=%s\n", myAgent.getLocalName(), contador, receiver.getName());
             }
 
             @Override
@@ -82,7 +83,7 @@ public class Ej2_Recibe_FSM extends FSMBehaviour {
 
                 myAgent.send(aclMessage);
                 contador--;
-                System.out.printf("Agente %s . Enviado. Quedan %d envios", myAgent.getLocalName(), contador);
+                System.out.printf("Agente %s . Enviado. Quedan %d envios\n", myAgent.getLocalName(), contador);
             }
 
             @Override
@@ -94,7 +95,8 @@ public class Ej2_Recibe_FSM extends FSMBehaviour {
         registerLastState(new OneShotBehaviour() {
             @Override
             public void action() {
-                System.out.printf("El agente receptor %s ha terminado", myAgent.getLocalName());
+                System.out.printf("El agente receptor %s ha terminado\n", myAgent.getLocalName());
+                myAgent.doDelete();
             }
 
             @Override

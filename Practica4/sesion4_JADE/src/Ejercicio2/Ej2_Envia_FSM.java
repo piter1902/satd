@@ -12,9 +12,11 @@ public class Ej2_Envia_FSM extends FSMBehaviour {
     // TODO: Change this to take it dynamically
     private final static String RECV_NAME = "Receiver";
     private static final String TEXT = "Text to send";
+
     private static final int EV_VE_RECIBIR_TEXTO = 0;
     private static final int EV_VE_ENVIAR_TEXTO = 1;
     private static final int EV_VE_FIN = 2;
+    
     private final String enviar_numero = "Enviar numero";
     private final String enviar_texto = "Enviar texto";
     private final String recibir_texto = "Recibir texto";
@@ -55,7 +57,7 @@ public class Ej2_Envia_FSM extends FSMBehaviour {
 
             @Override
             public int onEnd() {
-                return 0;
+                return EV_VE_ENVIAR_TEXTO;
             }
         }, enviar_numero);
 
@@ -69,7 +71,7 @@ public class Ej2_Envia_FSM extends FSMBehaviour {
 
                 myAgent.send(aclMessage);
                 contador--;
-                System.out.printf("Agente %s . Enviado. Quedan %d envios", myAgent.getLocalName(), contador);
+                System.out.printf("Agente %s . Enviado. Quedan %d envios\n", myAgent.getLocalName(), contador);
             }
 
             @Override
@@ -96,7 +98,8 @@ public class Ej2_Envia_FSM extends FSMBehaviour {
         registerLastState(new OneShotBehaviour() {
             @Override
             public void action() {
-                System.out.printf("El agente emisor %s ha terminado", myAgent.getLocalName());
+                System.out.printf("El agente emisor %s ha terminado\n", myAgent.getLocalName());
+                myAgent.doDelete();
             }
 
             @Override

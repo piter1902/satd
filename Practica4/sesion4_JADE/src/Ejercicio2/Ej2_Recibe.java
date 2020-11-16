@@ -21,6 +21,6 @@ public class Ej2_Recibe extends Agent {
     }
 
     protected void takeDown() {
-        System.out.print("El agente " + getLocalName() + " muere");
+        System.out.println("El agente " + getLocalName() + " muere");
     }
 }
