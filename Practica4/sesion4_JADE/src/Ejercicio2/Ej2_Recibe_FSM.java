@@ -9,15 +9,15 @@ import jade.lang.acl.ACLMessage;
 // Documentation: https://jade.tilab.com/doc/api/jade/core/behaviours/FSMBehaviour.html
 public class Ej2_Recibe_FSM extends FSMBehaviour {
 
-    private final String recibir_numero = "Recibir numero";
-    private final String recibir_texto = "Recibir texto";
-    private final String enviar_texto = "Enviar texto";
-    private final String fin = "Fin";
 
     private final int EV_VE_RECIBIR_TEXTO = 0;
     private final int EV_VE_ENVIAR_TEXTO = 1;
     private final int EV_VE_FIN = 2;
 
+    private final String recibir_numero = "Recibir numero";
+    private final String recibir_texto = "Recibir texto";
+    private final String enviar_texto = "Enviar texto";
+    private final String fin = "Fin";
 
     private AID receiver;
     private int contador;
