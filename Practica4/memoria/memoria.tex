@@ -86,7 +86,11 @@ Para la implementación de la máquina de estados en los comportamientos se ha h
 
 \section{Ejercicio 3}
 
-\textbf{Esto lo hacéis vosotros hijos de puta \LaTeX}
+En este ejercicio, hay dos agentes, \emph{Ej3\_EmisorPasajeVuelo} y \emph{Ej3\_ReceptorPasajeVuelo}. El funcionamiento consiste en que el primero envía toda la información necesaria para la reserva de un vuelo al segundo.\\
+
+Para la implementación de este comportamiento, en el agente \emph{Ej3\_EmisorPasajeVuelo} se puede observar como el agente pide datos por entrada estándar para conocer al destinatario del mensaje y la información necesaria para reservar el vuelo, que consta del origen, destino, tarifa y aerolínea (\ref{fig:ej3_sender}) y que se encapsula en un objeto de tipo \emph{Ej3\_PasajeVuelo}. Tras esto se puede observar que el agente crea un objeto de la clase \texttt{ACLMessage} (\emph{Agent Comunication Language Message}) de tipo \texttt{CONFIRM} (confirmación). A continuación, crea un objeto que identifica al agente destinatario (\texttt{AID}) y le pasa como parámetros el nombre del agente y además el \emph{booleano} \texttt{AID.ISLOCALNAME} que indica que el nombre del agente solo es válido localmente. Despues se le asigna este identificador \texttt{AID} al destinatario y el objeto \emph{Ej3\_pasajeVuelo} como contenido del mensaje para después enviarlo utilizando el método \texttt{send()} del agente asociado al comportamiento.\\
+
+En el código del comportamiento del \emph{Ej3\_ReceptorPasajeVuelo} ocurre la operación de recepción del mensaje enviado por el agente del comportamiento anterior. En este método \texttt{action} se puede observar como se produce una recepción de un mensaje (\texttt{ACLMessage}) con carácter síncrono, es decir, bloqueante. Tras esto, se comprueba que el mensaje es del tipo \texttt{CONFIRM} y su contenido es un objeto de tipo \emph{Ej3\_PasajeVuelo}. Si se cumplen estas dos condiciones se muestra por la salida estándar toda la información de la reserva del vuelo, que se encuentra encapsulada en el objeto (\ref{fig:ej3_reveiver}). 
 
 \newpage
 \section{Anexo 1: Figuras}
@@ -141,6 +145,21 @@ Para la implementación de la máquina de estados en los comportamientos se ha h
 \label{fig:FSMRecepcion}
 \end{figure}
 
+% Datos que introduce el Sender en ej3
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1]{images/sender_ej3.jpg}
+\caption{Captura de pantalla de la información a introducir por entrada estándar para el agente \emph{Ej3\_EmisorPasajeVuelo}}
+\label{fig:ej3_sender}
+\end{figure}
+
+% Datos que recibe el Receiver en ej3
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=1]{images/receiver_ej3.jpg}
+\caption{Captura de pantalla de la información que recibe\emph{Ej3\_ReceptorPasajeVuelo}}
+\label{fig:ej3_reveiver}
+\end{figure}
 
 \newpage
 \section{Anexo 2: Códigos}
